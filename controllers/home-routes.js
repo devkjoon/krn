@@ -1,20 +1,20 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Workout, Exercises } = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const dbWorkoutData = await Workout.findAll({
       include: [
         {
-          model: Painting,
+          model: Exercises,
           attributes: ['filename', 'description'],
         },
       ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const galleries = dbWorkoutData.map((Workout) =>
+      Workout.get({ plain: true })
     );
 
     req.session.save(() => {
@@ -39,18 +39,18 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
-router.get('/gallery/:id', async (req, res) => {
+// GET one Workout
+router.get('/Workout/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the gallery
+    // If the user is logged in, allow them to view the Workout
     try {
-      const dbGalleryData = await Gallery.findByPk(req.params.id, {
+      const dbWorkoutData = await Workout.findByPk(req.params.id, {
         include: [
           {
-            model: Painting,
+            model: Exercises,
             attributes: [
               'id',
               'title',
@@ -62,8 +62,8 @@ router.get('/gallery/:id', async (req, res) => {
           },
         ],
       });
-      const gallery = dbGalleryData.get({ plain: true });
-      res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+      const Workout = dbWorkoutData.get({ plain: true });
+      res.render('Workout', { Workout, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -71,19 +71,19 @@ router.get('/gallery/:id', async (req, res) => {
   }
 });
 
-// GET one painting
-router.get('/painting/:id', async (req, res) => {
+// GET one Exercises
+router.get('/Exercises/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the painting
+    // If the user is logged in, allow them to view the Exercises
     try {
-      const dbPaintingData = await Painting.findByPk(req.params.id);
+      const dbExercisesData = await Exercises.findByPk(req.params.id);
 
-      const painting = dbPaintingData.get({ plain: true });
+      const Exercises = dbExercisesData.get({ plain: true });
 
-      res.render('painting', { painting, loggedIn: req.session.loggedIn });
+      res.render('Exercises', { Exercises, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

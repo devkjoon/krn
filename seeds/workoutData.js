@@ -1,6 +1,6 @@
-const { Gallery } = require('../models');
+const { Workout } = require('../models');
 
-const gallerydata = [
+const workoutData = [
   {
     name: 'Abs',
     starting_date: 'April 20, 2021 07:00:00',
@@ -23,6 +23,6 @@ const gallerydata = [
   },
 ];
 
-const seedGallery = () => Gallery.bulkCreate(gallerydata);
+const seedWorkout = () => Workout.bulkCreate(workoutData);
 
-module.exports = seedGallery;
+module.exports = seedWorkout;
