@@ -31,7 +31,7 @@ Exercises.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    workout_id: {
+    Workout_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Workout',
