@@ -3,6 +3,7 @@ const { Workout, Exercises } = require('../models');
 
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
+   res.render('welcome');
   try {
     const dbWorkoutData = await Workout.findAll({
       include: [
@@ -92,12 +93,19 @@ router.get('/Exercises/:id', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
+    res.render('login');
     return;
-  }
-
-  res.render('login');
 });
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
+  return;
+})
+
+router.get("/homepage", (req, res) => {
+  res.render("homepage");
+  return;
+})
+
 
 module.exports = router;

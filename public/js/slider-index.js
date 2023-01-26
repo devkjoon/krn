@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$('#js-main-slider').pogoSlider({
 		autoplay: true,
 		autoplayTimeout: 10000,
-		displayProgess: true,
+		displayProgess: false,
 		preserveTargetSize: true,
 		targetWidth: 1000,
 		targetHeight: 300,
