@@ -228,6 +228,14 @@ button:focus {
 	cursor: pointer
 }
 
+#smallh3{
+	font-size: 80px;
+	/* margin-bottom: 10px; */
+}
+#smallp{
+	font-size: 19px;
+}
+
 
 /*------------------------------------------------------------------ 
    LOADER 
