@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Gallery extends Model {}
+class Workout extends Model {}
 
-Gallery.init(
+Workout.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,4 +32,4 @@ Gallery.init(
   }
 );
 
-module.exports = Gallery;
+module.exports = Workout;

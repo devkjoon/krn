@@ -382,3 +382,10 @@
          </div>
       </div>
       <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+<h3>Number of times you've visited this homepage: {{countVisit}}</h3>
+
+<section class="galleries">
+  {{#each galleries as |gallery|}}
+  {{> gallery-details}}
+  {{/each}}
+</section>
