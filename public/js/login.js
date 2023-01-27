@@ -44,4 +44,3 @@ const loginFormHandler = async (event) => {
   $('#loginBtn').on('click', loginFormHandler);
   
 $('#signUpBtn').on('click', signupFormHandler);
-  
