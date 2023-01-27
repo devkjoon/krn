@@ -255,6 +255,18 @@ button:focus {
 	padding-top: 2px;
 }
 
+#username-signup{
+	margin-bottom: 5px;
+}
+
+#email-signup{
+	margin-bottom: 5px;
+}
+
+#password-signup{
+	margin-bottom: 5px;
+}
+
 
 /*------------------------------------------------------------------ 
    LOADER 
