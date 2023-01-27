@@ -65,6 +65,7 @@ router.get('/workout/:id', async (req, res) => {
         ],
       });
       const workout = dbWorkoutData.get({ plain: true });
+      console.log(workout)
       res.render('workout', { workout, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
