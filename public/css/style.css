@@ -862,7 +862,7 @@ button#sidebarCollapse {
 }
 
 .img-responsive {
-	max-width: 100%;
+	max-width: 75%;
 }
 
 .slide_text h3 {
@@ -2793,4 +2793,9 @@ ul.bottom_menu li {
     /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
-    
+
+.logo_main img {
+	height: 60%;
+	width: 60%;
+	margin-right: 50px;
+}
