@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { Workout, Exercises } = require('../models');
 
 // GET all galleries for homepage
@@ -14,8 +15,8 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const galleries = dbWorkoutData.map((Workout) =>
-      Workout.get({ plain: true })
+    const workouts = dbWorkoutData.map((workout) =>
+      workout.get({ plain: true })
     );
 
     req.session.save(() => {
@@ -29,7 +30,7 @@ router.get('/', async (req, res) => {
       }
 
       res.render('homepage', {
-        galleries,
+        workouts,
         // We send over the current 'countVisit' session variable to be rendered
         countVisit: req.session.countVisit,
       });
@@ -41,7 +42,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one Workout
-router.get('/Workout/:id', async (req, res) => {
+router.get('/workout/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
@@ -63,8 +64,8 @@ router.get('/Workout/:id', async (req, res) => {
           },
         ],
       });
-      const Workout = dbWorkoutData.get({ plain: true });
-      res.render('Workout', { Workout, loggedIn: req.session.loggedIn });
+      const workout = dbWorkoutData.get({ plain: true });
+      res.render('workout', { workout, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -82,13 +83,27 @@ router.get('/Exercises/:id', async (req, res) => {
     try {
       const dbExercisesData = await Exercises.findByPk(req.params.id);
 
-      const Exercises = dbExercisesData.get({ plain: true });
+      const exercises = dbExercisesData.get({ plain: true });
 
-      res.render('Exercises', { Exercises, loggedIn: req.session.loggedIn });
+      res.render('exercises', { exercises, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
+  }
+});
+
+// CREATE a new user
+router.post('/', async (req, res) => {
+  try {
+    const newUser = req.body;
+    // hash the password from 'req.body' and save to newUser
+    newUser.password = await bcrypt.hash(req.body.password, 10);
+    // create the newUser with the hashed password and save to DB
+    const userData = await User.create(newUser);
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 
