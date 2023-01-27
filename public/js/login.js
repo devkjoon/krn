@@ -41,7 +41,7 @@ const loginFormHandler = async (event) => {
     }
   };
   
-  $('#loginBtn').add('click', loginFormHandler);
+  $('#loginBtn').on('click', loginFormHandler);
   
 $('#signUpBtn').on('click', signupFormHandler);
   
