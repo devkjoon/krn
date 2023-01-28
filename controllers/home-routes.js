@@ -119,8 +119,12 @@ router.get("/signup", (req, res) => {
 })
 
 router.get("/homepage", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
   res.render("homepage");
   return;
+  }
 })
 
 

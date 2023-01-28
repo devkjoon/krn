@@ -1,19 +1,19 @@
 $(document).ready(function () {
+  $("#js-main-slider")
+    .pogoSlider({
+      autoplay: true,
+      autoplayTimeout: 10000,
+      displayProgess: false,
+      preserveTargetSize: true,
+      targetWidth: 1000,
+      targetHeight: 300,
+      responsive: true,
+    })
+    .data("plugin_pogoSlider");
 
-	$('#js-main-slider').pogoSlider({
-		autoplay: true,
-		autoplayTimeout: 10000,
-		displayProgess: false,
-		preserveTargetSize: true,
-		targetWidth: 1000,
-		targetHeight: 300,
-		responsive: true
-	}).data('plugin_pogoSlider');
-
-	var transitionDemoOpts = {
-		displayProgess: false,
-		generateNav: false,
-		generateButtons: false
-	}
-
+  var transitionDemoOpts = {
+    displayProgess: false,
+    generateNav: false,
+    generateButtons: false,
+  };
 });
