@@ -156,4 +156,15 @@ router.get("/homepage", (req, res) => {
 })
 
 
+//Temporary route for exercises
+router.get("/exercisemain", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+  res.render("exercisemain");
+  return;
+  }
+})
+
+
 module.exports = router;
