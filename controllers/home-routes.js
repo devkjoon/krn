@@ -163,9 +163,9 @@ router.get("/homepage", (req, res) => {
 
 router.get(`/bmi/:bmi`, async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-  res.redirect('/login');
-  } else {
+  // if (!req.session.loggedIn) {
+  // res.redirect('/login');
+  // } else {
   // If the user is logged in, allow them to view the Exercises
   try {
     const userInput = req.params.bmi.split('-')
@@ -178,14 +178,15 @@ router.get(`/bmi/:bmi`, async (req, res) => {
   }
   };
   const response = await fetch(bmiurl, bmioptions);
-  const stats = await response.data.json();
+  let stats = await response.json();
+  stats = stats.data
   console.log(stats);
   res.render('bmi', { stats, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
   res.status(500).json(err);
   }
-  }
+  // }
   });
 
 
