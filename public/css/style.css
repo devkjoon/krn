@@ -773,6 +773,13 @@ a.navbar-brand {
 	font-weight: 500;
 }
 
+.overlay_bt p{
+	position: absolute;
+	top: 40%;
+	font-size: 30px;
+	font-weight: 500;
+}
+
 .paddding_left_15 {
 	padding-left: 15px;
 }
@@ -894,7 +901,7 @@ button#sidebarCollapse {
 }
 
 .img-responsive {
-	max-width: 75%;
+	max-width: 100%;
 }
 
 .slide_text h3 {
@@ -2839,4 +2846,74 @@ a.article:hover {
 
 .bckgrnd {
 	background: #000;
+}
+
+@media screen and (max-width: 1700px) {
+	.overlay_bt p{
+		font-size: 30px;
+		top: 37.5%
+	}
+}
+
+@media screen and (max-width: 1500px){
+	.overlay_bt p{
+		font-size: 25px;
+		top: 35%
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.overlay_bt p{
+		font-size: 20px;
+		top: 35%
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.overlay_bt p{
+		font-size: 20px;
+		top: 32.5%
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.overlay_bt p{
+		font-size: 20px;
+		top: 30%
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.overlay_bt p{
+		font-size: 30px;
+		top: 42.5%
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.overlay_bt p{
+		font-size: 30px;
+		top: 40%
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.overlay_bt p{
+		font-size: 30px;
+		top: 37.5%
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.overlay_bt p{
+		font-size: 25px;
+		top: 35%
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.overlay_bt p{
+		font-size: 25px;
+		top: 32.5%
+	}
 }
