@@ -1,1 +1,77 @@
 /** ADD YOUR AWESOME CODES HERE **/
+
+#main-wrap{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    background-image: url("/images/gym.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#top-bar-nav{
+    width: 60%;
+    align-self: center;
+    margin: 0 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-btn-krn{
+    width: 300px;
+    height: 100px;
+}
+
+.drop-btn{
+    width: 200px;
+    height: 50px;
+    border-radius: 14px;
+    font-size: 25px;
+    background-color: rgb(7, 219, 166);
+}
+
+.drop-btn:hover{
+    background-color:rgb(4, 255, 192)
+}
+
+.dropdown-bold{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.drop-btn:active{
+    background-color:rgb(4, 255, 192)
+}
+
+.dropdown-menu{
+    width: 500px;
+    height: 700px;
+}
+
+.dropdown-col{
+    width: 45%;
+    position: absolute
+}
+
+.column-2{
+    right: 0;
+    top: 8px;
+}
+
+#quotes-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(36, 35, 35, 0.959);
+    padding: 40px;
+    border-radius: 18px;
+}
+
+#quote{
+    font-size: 40px;
+    color: rgba(8, 255, 173, 0.952);
+    font-family: "Bree Serif", serif;
+}

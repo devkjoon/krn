@@ -159,7 +159,15 @@ router.get("/homepage", (req, res) => {
 })
 
 
-
+//Temporary route for exercises
+router.get("/exercisemain", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+  res.render("exercisemain");
+  return;
+  }
+})
 
 
 // GET BMI
@@ -191,6 +199,5 @@ router.get(`/bmi/:bmi`, async (req, res) => {
   }
   }
   });
-
 
 module.exports = router;
