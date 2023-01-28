@@ -58,8 +58,8 @@ router.get('/Exercises/bodyPartList', async (req, res) => {
   }
   };
   const response = await fetch(url, options);
-  const exercises = await response.json();
-  console.log(exercises)
+  const bodypartlist = await response.json();
+  console.log(bodypartlist)
   res.render('bodypartlist', { bodypartlist, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
@@ -86,9 +86,9 @@ router.get('/Exercises/targetList', async (req, res) => {
   }
   };
   const response = await fetch(url, options);
-  const exercises = await response.json();
-  console.log(exercises)
-  res.render('targetList', { targetlist, loggedIn: req.session.loggedIn });
+  const targetList = await response.json();
+  console.log(targetList)
+  res.render('targetList', { targetList, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
   res.status(500).json(err);
