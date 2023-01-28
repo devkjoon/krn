@@ -12,6 +12,9 @@
                <li><a href="about.html">About</a></li>
                <li><a href="services.html">Services</a></li>
                <li><a href="contact.html">Contact us</a></li>
+               <li><a id="logout" href="">Logout</a></li>
+               {{!-- <button id="logout">Logout</button> --}}
+
             </ul>
          </div>
       </nav>
@@ -75,13 +78,13 @@
                <div class="row">
                   <div class="col-md-6">
                      <div class="full text_align_right_img">
-                        <img src="images/ab_1.png" alt="#" />
+                        <img src="images/cliff-yoga.jpg" alt="#" />
                      </div>
                   </div>
                   <div class="col-md-6">
                      <div class="full paddding_left_15">
                         <div class="heading_main text_align_left">
-                           <h2><span class="theme_color">Welcome</span><br> To RUN Fitness</h2>
+                           <h2><span class="theme_color">Welcome</span><br> To KRN Fitness Aide</h2>
                         </div>
                      </div>
                      <div class="full paddding_left_15">
@@ -158,25 +161,28 @@
                                        <div class="row">
                                           <div class="col-lg-4 col-md-4 col-sm-12">
                                              <div class="full blog_img_popular">
-                                                <img class="img-responsive" src="images/food.jpg" alt="#" />
+                                                <img class="img-responsive" src="images/foodthumb.jpg" alt="#" />
                                                 <div class="overlay_bt">
                                                    <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                                   <p>Nutrition Guide</p>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="col-lg-4 col-md-4 col-sm-12">
                                              <div class="full blog_img_popular">
-                                                <img class="img-responsive" src="images/c2.png" alt="#" />
+                                                <img class="img-responsive" src="images/exercisethumb.png" alt="#" />
                                                 <div class="overlay_bt">
                                                    <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                                   <p>Targeted Workouts</p>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="col-lg-4 col-md-4 col-sm-12">
                                              <div class="full blog_img_popular">
-                                                <img class="img-responsive" src="images/scale.jpeg" alt="#" />
+                                                <img class="img-responsive" src="images/scalethumb.jpeg" alt="#" />
                                                 <div class="overlay_bt">
                                                    <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                                   <p>BMI Calculator</p>
                                                 </div>
                                              </div>
                                           </div>
@@ -186,25 +192,28 @@
                                        <div class="row">
                                           <div class="col-lg-4 col-md-4 col-sm-12">
                                              <div class="full blog_img_popular">
-                                                <img class="img-responsive" src="images/c1.png" alt="#" />
+                                                <img class="img-responsive" src="images/foodthumb.jpg" alt="#" />
                                                 <div class="overlay_bt">
                                                    <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                                   <p>Nutrition Guide</p>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="col-lg-4 col-md-4 col-sm-12">
                                              <div class="full blog_img_popular">
-                                                <img class="img-responsive" src="images/c2.png" alt="#" />
+                                                <img class="img-responsive" src="images/exercisethumb.png" alt="#" />
                                                 <div class="overlay_bt">
                                                    <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                                   <p>Targeted Workouts</p>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="col-lg-4 col-md-4 col-sm-12">
                                              <div class="full blog_img_popular">
-                                                <img class="img-responsive" src="images/c3.png" alt="#" />
+                                                <img class="img-responsive" src="images/scalethumb.jpeg" alt="#" />
                                                 <div class="overlay_bt">
                                                    <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                                   <p>BMI Calculator</p>
                                                 </div>
                                              </div>
                                           </div>
@@ -378,10 +387,6 @@
          </footer>
          <!-- End Footer -->
       <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
-{{!-- <h3>Number of times you've visited this homepage: {{countVisit}}</h3> --}}
-{{!-- 
-<section class="galleries">
-  {{#each Workout as |Workout|}}
-  {{> Workout-details}}
-  {{/each}}
-</section> --}}
+
+      <script src="/js/index.js"></script>
+      <script src="/js/logout.js"></script>

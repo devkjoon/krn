@@ -75,24 +75,52 @@ router.get('/workout/:id', async (req, res) => {
 });
 
 // GET one Exercises
+
 router.get('/Exercises/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
-    res.redirect('/login');
+  res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the Exercises
-    try {
-      const dbExercisesData = await Exercises.findByPk(req.params.id);
-
-      const exercises = dbExercisesData.get({ plain: true });
-
-      res.render('exercises', { exercises, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+  // If the user is logged in, allow them to view the Exercises
+  try {
+  const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${req.params.id}`;
+  const options = {
+  method: 'GET',
+  headers: {
+  'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
+  'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
   }
-});
+  };
+  const response = await fetch(url, options);
+  const exercises = await response.json();
+  console.log(exercises)
+  res.render('exercises', { exercises, loggedIn: req.session.loggedIn });
+  } catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+  }
+  }
+  });
+  
+
+// router.get('/Exercises/:id', async (req, res) => {
+//   // If the user is not logged in, redirect the user to the login page
+//   if (!req.session.loggedIn) {
+//     res.redirect('/login');
+//   } else {
+//     // If the user is logged in, allow them to view the Exercises
+//     try {
+//       const dbExercisesData = await Exercises.findByPk(req.params.id);
+
+//       const exercises = dbExercisesData.get({ plain: true });
+
+//       res.render('exercises', { exercises, loggedIn: req.session.loggedIn });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   }
+// });
 
 // CREATE a new user
 router.post('/', async (req, res) => {
@@ -119,8 +147,12 @@ router.get("/signup", (req, res) => {
 })
 
 router.get("/homepage", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
   res.render("homepage");
   return;
+  }
 })
 
 

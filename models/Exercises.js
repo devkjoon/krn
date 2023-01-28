@@ -5,29 +5,26 @@ class Exercises extends Model {}
 
 Exercises.init(
   {
+    
+    bodyPart: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    equipment: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    gifUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    artist: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    exhibition_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    filename: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
+    target: {
       type: DataTypes.STRING,
       allowNull: false,
     },
