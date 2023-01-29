@@ -168,6 +168,3 @@ router.get("/exercisemain", (req, res) => {
   return;
   }
 })
-
-
-module.exports = router.routes;
