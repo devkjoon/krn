@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
+const express = require("express");
+const bmiRouter = express.Router();
 const bmi = require('../../models/bmi');
 
 // GET BMI
-router.get(`/bmi/:bmi`, async (req, res) => {
+router.get(`/bmi`, async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     return res.redirect('/login');
