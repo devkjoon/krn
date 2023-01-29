@@ -12,7 +12,35 @@ const bmi = {
 
 fetch(bmiURL, bmi)
 	.then(res => res.json())
-	.then(json => console.log(json))
+	.then(json => {
+    async function newFormHandler(event) {
+      event.preventDefault();
+      const age = document.querySelector('#age').value;
+      const height = document.querySelector('#height').value;
+      const weight = document.querySelector('#weight').value;
+      // Send fetch request to add a new dish
+      const response = await fetch(`/api/bmi`, {
+        method: 'POST',
+        body: JSON.stringify({
+          age,
+          height,
+          weight,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      //if the dish is added, the 'all' template will be rerendered
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Issue loading results');
+      }
+    }
+    
+    document.querySelector('.bmiInput').addEventListener('submit', newFormHandler);
+  }
+    )
 	.catch(err => console.error('error:' + err));
 
 
