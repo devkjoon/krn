@@ -170,4 +170,4 @@ router.get("/exercisemain", (req, res) => {
 })
 
 
-
+module.exports = router.routes;
