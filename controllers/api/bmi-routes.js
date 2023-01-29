@@ -1,5 +1,11 @@
 const router = require('express').Router();
 const bmi = require('../../models/bmi');
+
+router.use(function(req, res, next) {
+  console.log("Router middleware is being executed");
+  next();
+});
+
 // GET BMI
 router.get(`/bmi/:bmi`, async (req, res) => {
     // If the user is not logged in, redirect the user to the login page
@@ -31,7 +37,7 @@ router.get(`/bmi/:bmi`, async (req, res) => {
 
     router.post('/', async (req, res) => {
         try { 
-          const bmiData = await Bmi.create({
+          const bmiData = await bmi.create({
           age: req.body.age,
           height: req.body.height,
           weight: req.body.weight,
