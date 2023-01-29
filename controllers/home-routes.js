@@ -5,19 +5,19 @@ const { Workout, Exercises, bmi } = require('../models');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
    res.render('welcome');
-  try {
-    const dbWorkoutData = await Workout.findAll({
-      include: [
-        {
-          model: Exercises,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+  // try {
+  //   const dbWorkoutData = await Workout.findAll({
+  //     include: [
+  //       {
+  //         model: Exercises,
+  //         attributes: ['filename', 'description'],
+  //       },
+  //     ],
+  //   });
 
-    const workouts = dbWorkoutData.map((workout) =>
-      workout.get({ plain: true })
-    );
+  //   const workouts = dbWorkoutData.map((workout) =>
+  //     workout.get({ plain: true })
+  //   );
 
     req.session.save(() => {
       // We set up a session variable to count the number of times we visit the homepage
@@ -29,16 +29,16 @@ router.get('/', async (req, res) => {
         req.session.countVisit = 1;
       }
 
-      res.render('homepage', {
-        workouts,
-        // We send over the current 'countVisit' session variable to be rendered
-        countVisit: req.session.countVisit,
+  //     res.render('homepage', {
+  //       workouts,
+  //       // We send over the current 'countVisit' session variable to be rendered
+  //       countVisit: req.session.countVisit,
       });
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
 // GET for by body parts
