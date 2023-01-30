@@ -1,11 +1,10 @@
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 async function newFormHandler(event) {
   event.preventDefault();
-  const age = document.querySelector('#age').value;
-  const height = document.querySelector('#height').value;
-  const weight = document.querySelector('#weight').value;
-
+  const age = parseInt(document.querySelector('#age').value);
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
   const bmiURL = `https://fitness-calculator.p.rapidapi.com/bmi?age=${age}&weight=${weight}&height=${height}`;
   const bmi = {
     method: 'GET',
@@ -18,7 +17,9 @@ async function newFormHandler(event) {
   fetch(bmiURL, bmi)
     .then(res => res.json())
     .then(async json => {
-      // Send fetch request 
+      console.log(json);
+     // Send fetch request 
+      try{
       const response = await fetch(`/api/bmi`, {
         method: 'POST',
         body: JSON.stringify({
@@ -35,8 +36,14 @@ async function newFormHandler(event) {
       } else {
         alert('Issue loading results');
       }
+    } catch(err) {
+      console.log(err);
+    }
     })
-    .catch(err => console.error('error:' + err));
+    .catch(err => {
+      console.error('error:' + err)
+    });
 }
+
 
 document.querySelector('.bmiInput').addEventListener('submit', newFormHandler);

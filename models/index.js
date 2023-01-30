@@ -1,8 +1,8 @@
 const User = require('./User');
-const bmi = require('./bmi');
+const Bmi = require('./Bmi');
 const { userInfo } = require('os');
 
-User.hasMany(bmi, {
+User.hasMany(Bmi, {
   foreignKey:0
 });
 const Workout = require('./Workout');
@@ -16,4 +16,4 @@ Exercises.belongsTo(Workout, {
   foreignKey: 'Workout_id',
 });
 
-module.exports = { User, bmi };
+module.exports = { User, Bmi };
