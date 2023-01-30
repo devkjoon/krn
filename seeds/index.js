@@ -7,7 +7,7 @@ const seedAll = async () => {
 
   await seedWorkout();
 
-  await seedExercises();
+  // await seedExercises();
 
   process.exit(0);
 };
