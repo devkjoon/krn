@@ -186,7 +186,7 @@ router.get(`/bmiinput/`, async (req, res) => {
   res.render('bmiinput', { loggedIn: req.session.loggedIn });
   }
   });
-  
+
 
 
 // GET BMI
@@ -198,6 +198,7 @@ router.get(`/bmi/:bmi`, async (req, res) => {
     // If the user is logged in, allow them to view the Exercises
     try {
       const userInput = req.params.bmi.split('-')
+// req.query.age work on this
     const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${userInput[0]}&weight=${userInput[1]}&height=${userInput[2]}`;
     const bmioptions = {
     method: 'GET',
