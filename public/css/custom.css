@@ -75,3 +75,9 @@
     color: rgba(8, 255, 173, 0.952);
     font-family: "Bree Serif", serif;
 }
+
+#ex-main{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}
