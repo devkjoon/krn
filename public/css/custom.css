@@ -78,6 +78,44 @@
 
 #ex-main{
     width: 80%;
+    margin: 50px 10%;
+    max-height: 75vh;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+
+.exCard{
+    width: 15%;
+    background-color: rgb(48, 48, 48);
+    padding: 10px 10px 0 10px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.exCard img {
+    width: 100%;
+    background-color: white;
+}
+
+.exCard p{
+    color: rgb(0, 255, 200);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#target-spot{
+    font-size: 40px;
+    color: white;
+    margin-top: 15px;
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.exCard .bt{
+    margin-top: 15px;
 }
