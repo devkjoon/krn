@@ -1,7 +1,7 @@
-<section class="painting">
+
     <div id="preloader">
          <div class="loader">
-            <img src="images/loader.gif" alt="#" />
+            <img src="/images/loader.gif" alt="#" />
          </div>
       </div>
       <!-- END LOADER -->
@@ -9,15 +9,14 @@
       <nav id="sidebar">
          <div class="menu_section">
             <ul>
-               <li><a href="homepage">Home</a></li>
+               <li><a href="'/homepage'">Home</a></li>
                <li><a href="about.html">About</a></li>
                <li><a href="services.html">Services</a></li>
                <li><a href="contact">Contact us</a></li>
-               <li><a href="exercises">Exercise</a></li>
-               <li><a href="bmiinput/">Health Stats</a></li>
+               <li><a href="/exercisemain">Exercise</a></li>
+               <li><a href="/bmiinput">Health Stats</a></li>
                <li><a id="logout" href="">Logout</a></li>
                {{!-- <button id="logout">Logout</button> --}}
-
             </ul>
          </div>
       </nav>
@@ -28,7 +27,7 @@
                <div class="row">
                   <div class="col-sm-6">
                      <div class="logo_main">
-                        <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+                        <a href="/bmiinput"><img src="/images/Color logo - no background.png" /></a>
                      </div>
                   </div>
                   <div class="col-sm-6">
@@ -37,9 +36,8 @@
                </div>
             </div>
          </header>
-  <div class="painting-details">
+  <div class="bmi-details">
     <h3>BMI: {{stats.bmi}}</h3>
     <h3>Health: {{stats.health}}</h3>
      <h3>Healthy BMI Range: {{stats.healthy_bmi_range}}</h3>
   </div>
-</section>

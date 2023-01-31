@@ -119,3 +119,54 @@
 .exCard .bt{
     margin-top: 15px;
 }
+
+#bmi-wrap{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    background-image: url("/images/weights-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.health-card{
+    width: 35%;
+    padding: 0;
+}
+
+#bmi-cont{
+    display: flex;
+    width: 90%;
+    margin: 100px 5%;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.health-card h1{
+    font-size: 25px;
+}
+
+.health-card p {
+    font-weight: 600;
+}
+
+.health-card input{
+    width: 60%;
+    margin-bottom: 10px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 0 15px
+}
+
+.health-card button{
+    width: 45%;
+    border: 1px solid black;
+    border-radius: 12px;
+    height: 35px;
+    background-color: rgb(5, 236, 159);
+}
