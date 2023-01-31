@@ -5,19 +5,19 @@ const { Workout, Exercises, bmi } = require('../models');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
    res.render('welcome');
-  try {
-    const dbWorkoutData = await Workout.findAll({
-      include: [
-        {
-          model: Exercises,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+  // try {
+  //   const dbWorkoutData = await Workout.findAll({
+  //     include: [
+  //       {
+  //         model: Exercises,
+  //         attributes: ['filename', 'description'],
+  //       },
+  //     ],
+  //   });
 
-    const workouts = dbWorkoutData.map((workout) =>
-      workout.get({ plain: true })
-    );
+  //   const workouts = dbWorkoutData.map((workout) =>
+  //     workout.get({ plain: true })
+  //   );
 
     req.session.save(() => {
       // We set up a session variable to count the number of times we visit the homepage
@@ -29,16 +29,16 @@ router.get('/', async (req, res) => {
         req.session.countVisit = 1;
       }
 
-      res.render('homepage', {
-        workouts,
-        // We send over the current 'countVisit' session variable to be rendered
-        countVisit: req.session.countVisit,
+  //     res.render('homepage', {
+  //       workouts,
+  //       // We send over the current 'countVisit' session variable to be rendered
+  //       countVisit: req.session.countVisit,
       });
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
 // GET for by body parts
@@ -58,8 +58,8 @@ router.get('/Exercises/bodyPartList', async (req, res) => {
   }
   };
   const response = await fetch(url, options);
-  const bodypartlist = await response.json();
-  console.log(bodypartlist)
+  const exercises = await response.json();
+  console.log(exercises)
   res.render('bodypartlist', { bodypartlist, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
@@ -86,9 +86,9 @@ router.get('/Exercises/targetList', async (req, res) => {
   }
   };
   const response = await fetch(url, options);
-  const targetList = await response.json();
-  console.log(targetList)
-  res.render('targetList', { targetList, loggedIn: req.session.loggedIn });
+  const exercises = await response.json();
+  console.log(exercises)
+  res.render('targetList', { targetlist, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
   res.status(500).json(err);
@@ -170,4 +170,34 @@ router.get("/exercisemain", (req, res) => {
 })
 
 
+// GET BMI
 
+router.get(`/bmi/:bmi`, async (req, res) => {
+  // If the user is not logged in, redirect the user to the login page
+  if (!req.session.loggedIn) {
+  res.redirect('/login');
+  } else {
+  // If the user is logged in, allow them to view the Exercises
+  try {
+    const userInput = req.params.bmi.split('-')
+  const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${userInput[0]}&weight=${userInput[1]}&height=${userInput[2]}`;
+  const bmioptions = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '06ed075c2bmsh028e8aca739c630p1050c5jsn0053a426db18',
+    'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
+  }
+  };
+  const response = await fetch(bmiurl, bmioptions);
+  let stats = await response.json();
+  stats = stats.data
+  console.log(stats);
+  res.render('bmi', { stats, loggedIn: req.session.loggedIn });
+  } catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+  }
+  }
+  });
+
+module.exports = router;
