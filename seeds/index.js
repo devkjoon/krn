@@ -1,4 +1,4 @@
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 // const seedWorkout = require('./workoutData');
 // const seedExercises = require('./exercisesData');
 
