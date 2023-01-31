@@ -1,6 +1,37 @@
 // const fetch = require('node-fetch');
 const fitness = require("fitness-calc");
 
+async function oneRepMax(e) {
+  e.preventDefault();
+
+  const weight = document.querySelector('#weight2').value;
+  const reps = document.querySelector('#reps').value;
+  
+  const result = oneRepMax(weight, reps);
+  return result
+}
+
+async function basalMetabolicRate(e) {
+  e.preventDefault();
+
+  const height = document.querySelector('#height2').value;
+  const weight = document.querySelector('#weight3').value;
+  const age = document.querySelector('#age2').value;
+
+  const bmr = BMR_men(weight, height, age)
+  return bmr
+}
+
+async function idealBodyWeight(e) {
+  e.preventDefault();
+
+  const height = document.querySelector('#height3').value;
+  const age = document.querySelector('#age3').value;
+
+  const ibw =  IBW_men(height, age);
+  return ibw
+}
+
 async function newFormHandler(event) {
   event.preventDefault();
   const age = parseInt(document.querySelector('#age').value);
@@ -48,3 +79,6 @@ async function newFormHandler(event) {
 }
 
 document.querySelector(".bmiInput").addEventListener("submit", newFormHandler);
+document.querySelector(".ormInput").addEventListener("submit", newFormHandler);
+document.querySelector(".bmrInput").addEventListener("submit", newFormHandler);
+document.querySelector(".ibwInput").addEventListener("submit", newFormHandler);
