@@ -190,16 +190,16 @@ router.get(`/bmiinput/`, async (req, res) => {
 
 
 // GET BMI
-router.get(`/bmi/:bmi`, async (req, res) => {
+router.get(`/bmi/:age/:weight/:height`, async (req, res) => {
     // If the user is not logged in, redirect the user to the login page
     if (!req.session.loggedIn) {
     res.redirect('/login');
     } else {
     // If the user is logged in, allow them to view the Exercises
     try {
-      const userInput = req.params.bmi.split('-')
+      // const userInput = req.params.bmi.split('-')
 // req.query.age work on this
-    const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${userInput[0]}&weight=${userInput[1]}&height=${userInput[2]}`;
+    const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${req.params.age}&weight=${req.params.weight}&height=${req.params.height}`;
     const bmioptions = {
     method: 'GET',
     headers: {
@@ -210,7 +210,6 @@ router.get(`/bmi/:bmi`, async (req, res) => {
     const response = await fetch(bmiurl, bmioptions);
     let stats = await response.json();
     stats = stats.data
-    console.log(stats);
     res.render('bmi', { stats, loggedIn: req.session.loggedIn });
     } catch (err) {
     console.log(err);
