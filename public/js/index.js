@@ -7,9 +7,11 @@ const options = {
   }
 };
 
+
 $(document).on("click", "drop-btn", () => {
   $(".dropdown-menu").dropdown()
 })
+
 
 $(".muscle").on("click", (e) => {
   let muscle = e.target.id
@@ -17,7 +19,23 @@ $(".muscle").on("click", (e) => {
 
   fetch(url, options)
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => {
+      
+      console.log(json)
+
+      for(let i = 0; i < json.length; i ++){
+
+      const exContent = 
+      `<div class="exCard">
+      <img src="${json[i].gifUrl}">
+      <p>${json[i].name}</p>
+      <p>${json[i].target}</p>
+      </div>`
+
+      console.log(exContent)
+      }
+
+    })
     .catch(err => console.error('error:' + err));
 })
 
