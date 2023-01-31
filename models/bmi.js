@@ -1,21 +1,26 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class bmi extends Model {}
+class Bmi extends Model {}
 
-bmi.init(
+Bmi.init(
   {
-    
+    id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+          },
     age: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     weight: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     height: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     }
   },
@@ -27,4 +32,4 @@ bmi.init(
   }
 );
 
-module.exports = bmi;
+module.exports = Bmi;

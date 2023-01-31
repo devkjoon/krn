@@ -16,9 +16,9 @@ $(".muscle").on("click", (e) => {
   let url = `https://exercisedb.p.rapidapi.com/exercises/target/${muscle}`;
 
   fetch(url, options)
-	.then(res => res.json())
-	.then(json => console.log(json))
-	.catch(err => console.error('error:' + err));
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error('error:' + err));
 })
 
 $(".bp").on("click", (e) => {
@@ -27,20 +27,20 @@ $(".bp").on("click", (e) => {
   let url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bp}`;
 
   fetch(url, options)
-	.then(res => res.json())
-	.then(json => console.log(json))
-	.catch(err => console.error('error:' + err));
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error('error:' + err));
 })
 
 const randomquote = Math.floor(Math.random() * 1600)
 
 fetch("https://type.fit/api/quotes")
-.then(function(response) {
-  return response.json();
-})
-.then(function(data) {
-  $("#quote").html(
-  `${data[randomquote].text}
-  -${data[randomquote].author}`)
-});
-
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    $("#quote").html(
+      `${data[randomquote].text}
+    -${data[randomquote].author}`
+    );
+  });

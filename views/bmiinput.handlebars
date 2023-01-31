@@ -22,7 +22,7 @@
                <li><a href="services.html">Services</a></li>
                <li><a href="contact">Contact us</a></li>
                <li><a href="exercises">Exercise</a></li>
-               <li><a href="bmi/20-65-140">Health Stats</a></li>
+               <li><a href="bmiinput/">Health Stats</a></li>
                <li><a id="logout" href="">Logout</a></li>
                {{!-- <button id="logout">Logout</button> --}}
 
@@ -41,7 +41,7 @@
                   </div>
                   <div class="col-sm-6">
                      <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
-                           src="../public/images/menu_icon.png"></button>
+                           src="/images/menu_icon.png"></button>
                   </div>
                </div>
             </div>
@@ -60,31 +60,31 @@
                      Age:
                   </label>
                   <br />
-                  <textarea id='age' name='age' rows='2' cols='30'>
+                  <input id='age' name='age' rows='2' cols='30'>
                   {{age}}
-                  </textarea>
+                  </input>
                   <br />
                   <label for='height'>
                      Height:
                   </label>
                   <br />
-                  <textarea id='height' name='height' rows='5' cols='30'>
+                  <input id='height' name='height' rows='5' cols='30'>
                   {{height}}
-                  </textarea>
+                  </input>
                   <br />
                   <label for='weight'>
                      Weight:
                   </label>
                   <br />
-                  <textarea id='weight' name='weight' rows='2' cols='30'>
+                  <input id='weight' name='weight' rows='2' cols='30'>
                   {{weight}}
-                  </textarea>
+                  </input>
                   <br />
                   <button type='submit' value='Submit'>
                      Submit
                   </button>
                </form>
 </div>
-               <script src="../public/js/calculators/bmi.js"></script>
+               <script src="/js/calculators/bmi.js"></script>
 
 </html>

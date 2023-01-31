@@ -1,4 +1,42 @@
 <section class="painting">
+    <div id="preloader">
+         <div class="loader">
+            <img src="images/loader.gif" alt="#" />
+         </div>
+      </div>
+      <!-- END LOADER -->
+      <div class="wrapper">
+      <nav id="sidebar">
+         <div class="menu_section">
+            <ul>
+               <li><a href="homepage">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="services.html">Services</a></li>
+               <li><a href="contact">Contact us</a></li>
+               <li><a href="exercises">Exercise</a></li>
+               <li><a href="bmiinput/">Health Stats</a></li>
+               <li><a id="logout" href="">Logout</a></li>
+               {{!-- <button id="logout">Logout</button> --}}
+
+            </ul>
+         </div>
+      </nav>
+      <div id="content">
+         <!-- Start header -->
+         <header class="top-header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="logo_main">
+                        <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img src="/images/menu_icon.png"></button>
+                  </div>
+               </div>
+            </div>
+         </header>
   <div class="painting-details">
     <h3>{{stats.bmi}}</h3>
     <h3>{{stats.health}}</h3>
