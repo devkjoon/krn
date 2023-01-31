@@ -85,6 +85,104 @@
                   </button>
                </form>
 </div>
+<div id="orm-page">
+               <div id="heading" style="margin-top: 40px;">
+                  <h1 class="is-size-1" id="orm-header">One Rep Max Calculator</h1>
+                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                     Calculate your one rep max with your current set!</p>
+                  <hr>
+               </div>
+               <form class='ormInput'>
+                  <br />
+                  <label for='weight2'>
+                     weight:
+                  </label>
+                  <br />
+                  <input id='weight2' name='weight2' rows='5' cols='30'>
+                  {{weight2}}
+                  </input>
+                  <br />
+                  <label for='reps'>
+                     reps:
+                  </label>
+                  <br />
+                  <input id='reps' name='reps' rows='2' cols='30'>
+                  {{reps}}
+                  </input>
+                  <br />
+                  <button type='submit' value='Submit'>
+                     Submit
+                  </button>
+               </form>
+</div>
+<div id="bmr-page">
+               <div id="heading" style="margin-top: 40px;">
+                  <h1 class="is-size-1" id="orm-header">Basal Metabolic Rate Calculator</h1>
+                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                     Calculate your basal metabolic rate!</p>
+                  <hr>
+               </div>
+               <form class='bmrInput'>
+                  <br />
+                  <label for='height2'>
+                     height:
+                  </label>
+                  <br />
+                  <input id='height2' name='height2' rows='5' cols='30'>
+                  {{height2}}
+                  </input>
+                  <br />
+                  <label for='weight3'>
+                     weight:
+                  </label>
+                  <br />
+                  <input id='weight3' name='weight3' rows='5' cols='30'>
+                  {{weight3}}
+                  </input>
+                  <br />
+                  <label for='age2'>
+                     age:
+                  </label>
+                  <br />
+                  <input id='age2' name='age2' rows='2' cols='30'>
+                  {{age2}}
+                  </input>
+                  <br />
+                  <button type='submit' value='Submit'>
+                     Submit
+                  </button>
+               </form>
+</div>
+<div id="ibw-page">
+               <div id="heading" style="margin-top: 40px;">
+                  <h1 class="is-size-1" id="orm-header">Ideal Body Weight Calculator</h1>
+                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                     Calculate your ideal body weight based on your height and age!</p>
+                  <hr>
+               </div>
+               <form class='ibwInput'>
+                  <br />
+                  <label for='age3'>
+                     age:
+                  </label>
+                  <br />
+                  <input id='age3' name='age3' rows='5' cols='30'>
+                  {{age3}}
+                  </input>
+                  <br />
+                  <label for='height3'>
+                     height:
+                  </label>
+                  <br />
+                  <input id='height3' name='height3' rows='2' cols='30'>
+                  {{height3}}
+                  </input>
+                  <br />
+                  <button type='submit' value='Submit'>
+                     Submit
+                  </button>
+               </form>
+</div>
                <script src="/js/calculators/bmi.js"></script>
 
 </html>
