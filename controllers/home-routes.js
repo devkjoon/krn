@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Workout, Exercises, Bmi } = require('../models');
+const Mealplan = require('../models/meal');
 
 const logRequest = (req, res, next) => {
   console.log(`Received ${req.method} request at ${req.url}`);
@@ -217,6 +218,80 @@ const height = (req.params.height*2.54)
         res.status(400).json(err);
       }
       });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //Get bmiInput from user
+router.get(`/mealplan/`, async (req, res) => {
+  // If the user is not logged in, redirect the user to the login page
+  if (!req.session.loggedIn) {
+  res.redirect('/login');
+  } else {
+  // If the user is logged in, allow them to view the Exercises
+  res.render('mealplan', { loggedIn: req.session.loggedIn });
+  }
+  });
+
+// GET BMI
+
+
+// GET BMI
+router.get(`/mealplan/:time/:calories/:diet/:exclsuion`, async (req, res) => {
+    // If the user is not logged in, redirect the user to the login page
+    if (!req.session.loggedIn) {
+    res.redirect('/login');
+    } else {
+    // If the user is logged in, allow them to view the Exercises
+    try {
+      // const userInput = req.params.bmi.split('-')
+// req.query.age work on this
+    const mealurl = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=${time}&targetCalories=${calories}&diet=${diet}&exclude=${exclusion}`;
+    const mealoptions = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
+        'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+      }
+    };
+    const response = await fetch(mealurl, mealoptions);
+    let stats = await response.json();
+    stats = stats.data
+    res.render('mealplan', { stats, loggedIn: req.session.loggedIn });
+    } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+    }
+    }
+    });
+
+    router.post('/', async (req, res) => {
+        try { 
+          const mealPlanData = await Mealplan.create({
+          time: req.body.time,
+          calories: req.body.calories,
+          diet: req.body.diet,
+          exclusion: req.body.exclusion
+        });
+        res.status(200).json(mealPlanData)
+      } catch (err) {
+        res.status(400).json(err);
+      }
+      });
+
 
 
 module.exports = router;
