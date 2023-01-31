@@ -1,4 +1,5 @@
 // const fetch = require('node-fetch');
+const fitness = require("fitness-calc");
 
 async function newFormHandler(event) {
   event.preventDefault();
@@ -46,5 +47,4 @@ async function newFormHandler(event) {
   //   });
 }
 
-
-document.querySelector('.bmiInput').addEventListener('submit', newFormHandler);
+document.querySelector(".bmiInput").addEventListener("submit", newFormHandler);

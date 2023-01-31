@@ -1,16 +1,16 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
-const url = 'https://exercisedb.p.rapidapi.com/exercises/exercise/%7Bid%7D';
+const url = "https://exercisedb.p.rapidapi.com/exercises/exercise/%7Bid%7D";
 
 const options = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
-    'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-  }
+    "X-RapidAPI-Key": "0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc",
+    "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+  },
 };
 
 fetch(url, options)
-	.then(res => res.json())
-	.then(json => console.log(json))
-	.catch(err => console.error('error:' + err));
+  .then((res) => res.json())
+  .then((json) => console.log(json))
+  .catch((err) => console.error("error:" + err));
