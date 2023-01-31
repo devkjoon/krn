@@ -199,7 +199,9 @@ router.get(`/bmi/:age/:weight/:height`, async (req, res) => {
     try {
       // const userInput = req.params.bmi.split('-')
 // req.query.age work on this
-    const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${req.params.age}&weight=${req.params.weight}&height=${req.params.height}`;
+const weight = (req.params.weight/2.205)
+const height = (req.params.height*2.54)
+    const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${req.params.age}&weight=${weight}&height=${height}`;
     const bmioptions = {
     method: 'GET',
     headers: {
