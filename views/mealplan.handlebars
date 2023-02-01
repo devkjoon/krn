@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Fitness</title>
+   </head>
+   <div id="preloader">
+      <div class="loader">
+         <img src="images/loader.gif" alt="#" />
+      </div>
+   </div>
+   <!-- END LOADER -->
+   <div class="wrapper">
+      <nav id="sidebar">
+         <div class="menu_section">
+            <ul>
+               <li><a href="/homepage">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="services.html">Services</a></li>
+               <li><a href="contact">Contact us</a></li>
+               <li><a href="/mealplan">Meal Plan</a></li>
+               <li><a href="/exercisemain">Exercise</a></li>
+               <li><a href="/bmiinput">Health Stats</a></li>
+               <li><a id="logout" href="">Logout</a></li>
+               {{!-- <button id="logout">Logout</button> --}}
+            </ul>
+         </div>
+      </nav>
+      <div id="bmi-wrap">
+         <!-- Start header -->
+         <header class="top-header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="logo_main">
+                        <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
+                           src="/images/menu_icon.png"></button>
+                  </div>
+               </div>
+            </div>
+         </header>
+      <main id="mainCont">
+         <body>
+            <div>
+               <div id="" class="health-card mealform">
+                  <div id="heading" style="margin-top: 40px;">
+                     <h1 class="is-size-1" id="BMI-header">Meal Plan Generator</h1>
+                     <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                        Let's get a meal plan setup!</p>
+                  </div>
+                  <form class='mealplan'>
+                     <input placeholder="v     Would you like to plan for a week or a day?     v" readonly id='timein' name='timein' rows='2' cols='30'>
+                     {{time}}
+                     </input>
+                     <select id='time' name='time' rows='2' cols='30'>
+                        <option value="Day" selected>Day</option>
+                        <option value="Week">Week</option>
+                        {{time}}
+                     </select> 
+                     <input placeholder="How many Calories do you need?"  id='calories' name='calories' rows='5' cols='30'>
+                     {{calories}}
+                     </input>
+                     <input placeholder="v     Do you have a type of diet you follow?     v" readonly id='dietin' name='dietin' rows='2' cols='30'>
+                     {{diet}}
+                     </input>
+                     <select id='diet' name='diet' rows='2' cols='30'>
+                        <option value="none" selected>None</option>
+                        <option value="carnivore">Carnivore</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="paleo">Paleo</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="pescatarian">Pescatarian</option>
+                        {{time}}
+                     </select> 
+                     <input placeholder="Do you have any type of exclusions for your meals?"  id='exclusion' name='exclusion' rows='2' cols='30'>
+                     {{exclusion}}
+                     </input>
+                     <button id="mealbtn" classtype='submit' value='Submit'>
+                        Submit
+                     </button>
+                  </form>
+               </div>
+            </body>
+         </main>
+               <script src="/js/mealplan.js"></script>
+
+</html>

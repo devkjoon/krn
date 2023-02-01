@@ -1,5 +1,5 @@
 // const fetch = require('node-fetch');
-const fitness = require("fitness-calc");
+// const fitness = require("fitness-calc");
 
 async function oneRepMax(e) {
   e.preventDefault();
@@ -37,7 +37,8 @@ async function newFormHandler(event) {
   const age = parseInt(document.querySelector('#age').value);
   const height = parseInt(document.querySelector('#height').value);
   const weight = parseInt(document.querySelector('#weight').value);
-  window.location=`/bmi/${age}-${weight}-${height}`;
+  // window.location=`/bmi/${age}-${weight}-${height}`;
+  window.location = `/bmi/${age}/${weight}/${height}`;
   // const bmiURL = `https://fitness-calculator.p.rapidapi.com/bmi?age=${age}&weight=${weight}&height=${height}`;
   // const bmi = {
   //   method: 'GET',

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Workout, Exercises, Bmi } = require('../models');
+const Mealplan = require('../models/meal');
 
 const logRequest = (req, res, next) => {
   console.log(`Received ${req.method} request at ${req.url}`);
@@ -12,19 +13,6 @@ router.use(logRequest);
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
    res.render('welcome');
-  // try {
-  //   const dbWorkoutData = await Workout.findAll({
-  //     include: [
-  //       {
-  //         model: Exercises,
-  //         attributes: ['filename', 'description'],
-  //       },
-  //     ],
-  //   });
-
-  //   const workouts = dbWorkoutData.map((workout) =>
-  //     workout.get({ plain: true })
-  //   );
 
     req.session.save(() => {
       // We set up a session variable to count the number of times we visit the homepage
@@ -35,18 +23,15 @@ router.get('/', async (req, res) => {
         // If the 'countVisit' session variable doesn't exist, set it to 1
         req.session.countVisit = 1;
       }
-
-  //     res.render('homepage', {
-  //       workouts,
-  //       // We send over the current 'countVisit' session variable to be rendered
-  //       countVisit: req.session.countVisit,
       });
+
+    });
   //   });
   // } catch (err) {
   //   console.log(err);
   //   res.status(500).json(err);
   // }
-});
+
 
 // GET for by body parts
 router.get('/Exercises/bodyPartList', async (req, res) => {
@@ -65,8 +50,8 @@ router.get('/Exercises/bodyPartList', async (req, res) => {
   }
   };
   const response = await fetch(url, options);
-  const bodypartlist = await response.json();
-  console.log(bodypartlist)
+  const exercises = await response.json();
+  console.log(exercises)
   res.render('bodypartlist', { bodypartlist, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
@@ -93,9 +78,9 @@ router.get('/Exercises/targetList', async (req, res) => {
   }
   };
   const response = await fetch(url, options);
-  const targetList = await response.json();
-  console.log(targetList)
-  res.render('targetList', { targetList, loggedIn: req.session.loggedIn });
+  const exercises = await response.json();
+  console.log(exercises)
+  res.render('targetList', { targetlist, loggedIn: req.session.loggedIn });
   } catch (err) {
   console.log(err);
   res.status(500).json(err);
@@ -188,18 +173,19 @@ router.get(`/bmiinput/`, async (req, res) => {
   });
 
 
-
 // GET BMI
-router.get(`/bmi/:bmi`, async (req, res) => {
+router.get(`/bmi/:age/:weight/:height`, async (req, res) => {
     // If the user is not logged in, redirect the user to the login page
     if (!req.session.loggedIn) {
     res.redirect('/login');
     } else {
     // If the user is logged in, allow them to view the Exercises
     try {
-      const userInput = req.params.bmi.split('-')
+      // const userInput = req.params.bmi.split('-')
 // req.query.age work on this
-    const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${userInput[0]}&weight=${userInput[1]}&height=${userInput[2]}`;
+const weight = (req.params.weight/2.205)
+const height = (req.params.height*2.54)
+    const bmiurl = `https://fitness-calculator.p.rapidapi.com/bmi?age=${req.params.age}&weight=${weight}&height=${height}`;
     const bmioptions = {
     method: 'GET',
     headers: {
@@ -210,7 +196,6 @@ router.get(`/bmi/:bmi`, async (req, res) => {
     const response = await fetch(bmiurl, bmioptions);
     let stats = await response.json();
     stats = stats.data
-    console.log(stats);
     res.render('bmi', { stats, loggedIn: req.session.loggedIn });
     } catch (err) {
     console.log(err);
@@ -231,6 +216,80 @@ router.get(`/bmi/:bmi`, async (req, res) => {
         res.status(400).json(err);
       }
       });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //Get bmiInput from user
+router.get(`/mealplan/`, async (req, res) => {
+  // If the user is not logged in, redirect the user to the login page
+  if (!req.session.loggedIn) {
+  res.redirect('/login');
+  } else {
+  // If the user is logged in, allow them to view the Exercises
+  res.render('mealplan', { loggedIn: req.session.loggedIn });
+  }
+  });
+
+// GET BMI
+
+
+// GET BMI
+router.get(`/mealplan/:time/:calories/:diet/:exclsuion`, async (req, res) => {
+    // If the user is not logged in, redirect the user to the login page
+    if (!req.session.loggedIn) {
+    res.redirect('/login');
+    } else {
+    // If the user is logged in, allow them to view the Exercises
+    try {
+      // const userInput = req.params.bmi.split('-')
+// req.query.age work on this
+    const mealurl = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=${time}&targetCalories=${calories}&diet=${diet}&exclude=${exclusion}`;
+    const mealoptions = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
+        'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+      }
+    };
+    const response = await fetch(mealurl, mealoptions);
+    let stats = await response.json();
+    stats = stats.data
+    res.render('mealplan', { stats, loggedIn: req.session.loggedIn });
+    } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+    }
+    }
+    });
+
+    router.post('/', async (req, res) => {
+        try { 
+          const mealPlanData = await Mealplan.create({
+          time: req.body.time,
+          calories: req.body.calories,
+          diet: req.body.diet,
+          exclusion: req.body.exclusion
+        });
+        res.status(200).json(mealPlanData)
+      } catch (err) {
+        res.status(400).json(err);
+      }
+      });
+
 
 
 module.exports = router;

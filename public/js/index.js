@@ -23,16 +23,22 @@ $(".muscle").on("click", (e) => {
       
       console.log(json)
 
+      $("#ex-main").empty()
+
+      $("#target-spot").html(json[0].target)
+
       for(let i = 0; i < json.length; i ++){
 
       const exContent = 
       `<div class="exCard">
       <img src="${json[i].gifUrl}">
+      <p class="bt">${json[i].equipment}</p>
       <p>${json[i].name}</p>
-      <p>${json[i].target}</p>
       </div>`
 
       console.log(exContent)
+
+      $("#ex-main").append(exContent)
       }
 
     })
@@ -46,7 +52,28 @@ $(".bp").on("click", (e) => {
 
   fetch(url, options)
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => {
+
+      console.log(json)
+
+      $("#ex-main").empty()
+
+      $("#target-spot").html(json[0].bodyPart)
+
+      for(let i = 0; i < json.length; i ++){
+
+      const exContent = 
+      `<div class="exCard">
+      <img src="${json[i].gifUrl}">
+      <p class="bt">${json[i].equipment}</p>
+      <p>${json[i].name}</p>
+      </div>`
+
+      console.log(exContent)
+
+      $("#ex-main").append(exContent)
+      }
+    })
     .catch(err => console.error('error:' + err));
 })
 

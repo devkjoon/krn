@@ -17,19 +17,19 @@
       <nav id="sidebar">
          <div class="menu_section">
             <ul>
-               <li><a href="'/homepage'">Home</a></li>
+               <li><a href="/homepage">Home</a></li>
                <li><a href="about.html">About</a></li>
                <li><a href="services.html">Services</a></li>
                <li><a href="contact">Contact us</a></li>
-               <li><a href="exercises">Exercise</a></li>
-               <li><a href="bmiinput/">Health Stats</a></li>
+               <li><a href="/mealplan">Meal Plan</a></li>
+               <li><a href="/exercisemain">Exercise</a></li>
+               <li><a href="/bmiinput">Health Stats</a></li>
                <li><a id="logout" href="">Logout</a></li>
                {{!-- <button id="logout">Logout</button> --}}
-
             </ul>
          </div>
       </nav>
-      <div id="content">
+      <div id="bmi-wrap">
          <!-- Start header -->
          <header class="top-header">
             <div class="container">
@@ -47,142 +47,113 @@
             </div>
          </header>
 
-         <body>
-            <div id="bmi-page">
-               <div id="heading" style="margin-top: 40px;">
-                  <h1 class="is-size-1" id="BMI-header">BMI Calculator</h1>
-                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
-                     Calculate your body mass index with your age, weight and height!</p>
-                  <hr>
+         <body id="bmi-cont">
+            <div id="bmi-cont">
+               <div id="bmi-page" class="health-card">
+                  <div id="heading" style="margin-top: 40px;">
+                     <h1 class="is-size-1" id="BMI-header">Body Measurements</h1>
+                     <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                        Input your age, weight, and height</p>
+                  </div>
+                  <form class='bmiInput'>
+                     <input placeholder="Age" id='age' name='age' rows='2' cols='30'>
+                     {{age}}
+                     </input>
+                     <select id='gender' name='gender' rows='2' cols='30'>
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        {{gender}}
+                     </select>
+                     {{gender}}
+                     </input>
+                     <input placeholder="Height (inches)" id='height' name='height' rows='5' cols='30'>
+                     {{height}}
+                     </input>
+                     <input placeholder="Weight (lbs)" id='weight' name='weight' rows='2' cols='30'>
+                     {{weight}}
+                     </input>
+                     <input placeholder="Neck (inches)" id='neck' name='neck' rows='2' cols='30'>
+                     {{neck}}
+                     </input>
+                     <input placeholder="Waist (inches)" id='waist' name='waist' rows='2' cols='30'>
+                     {{waist}}
+                     </input>
+                     <input placeholder="Hips (inches)" id='hips' name='hips' rows='2' cols='30'>
+                     {{hips}}
+                     </input>
+                     <select id='activitylevel' name='activitylevel' rows='2' cols='30'>
+                        <option value="level_1" selected>Sedentary: little or no exercise</option>
+                        <option value="level_2">Exercise 1-3 times/week</option>
+                        <option value="level_3">Exercise 4-5 times/week</option>
+                        <option value="level_4">Daily exercise or intense exercise 3-4 times/week</option>
+                        <option value="level_5">Intense exercise 6-7 times/week</option>
+                        <option value="level_6">Very intense exercise daily, or physical job</option>
+                        {{activitylevel}}
+                     </select>
+                     <button type='submit' value='Submit'>
+                        Submit
+                     </button>
+                  </form>
                </div>
-               <form class='bmiInput'>
-                  <label for='age'>
-                     Age:
-                  </label>
-                  <br />
-                  <input id='age' name='age' rows='2' cols='30'>
-                  {{age}}
-                  </input>
-                  <br />
-                  <label for='height'>
-                     Height:
-                  </label>
-                  <br />
-                  <input id='height' name='height' rows='5' cols='30'>
-                  {{height}}
-                  </input>
-                  <br />
-                  <label for='weight'>
-                     Weight:
-                  </label>
-                  <br />
-                  <input id='weight' name='weight' rows='2' cols='30'>
-                  {{weight}}
-                  </input>
-                  <br />
-                  <button type='submit' value='Submit'>
-                     Submit
-                  </button>
-               </form>
-</div>
-<div id="orm-page">
-               <div id="heading" style="margin-top: 40px;">
-                  <h1 class="is-size-1" id="orm-header">One Rep Max Calculator</h1>
-                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
-                     Calculate your one rep max with your current set!</p>
-                  <hr>
-               </div>
-               <form class='ormInput'>
-                  <br />
-                  <label for='weight2'>
-                     weight:
-                  </label>
-                  <br />
-                  <input id='weight2' name='weight2' rows='5' cols='30'>
-                  {{weight2}}
-                  </input>
-                  <br />
-                  <label for='reps'>
-                     reps:
-                  </label>
-                  <br />
-                  <input id='reps' name='reps' rows='2' cols='30'>
-                  {{reps}}
-                  </input>
-                  <br />
-                  <button type='submit' value='Submit'>
-                     Submit
-                  </button>
-               </form>
-</div>
-<div id="bmr-page">
+               {{!-- <div id="bmr-page" class="health-card">
                <div id="heading" style="margin-top: 40px;">
                   <h1 class="is-size-1" id="orm-header">Basal Metabolic Rate Calculator</h1>
                   <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
                      Calculate your basal metabolic rate!</p>
-                  <hr>
                </div>
                <form class='bmrInput'>
-                  <br />
-                  <label for='height2'>
-                     height:
-                  </label>
-                  <br />
-                  <input id='height2' name='height2' rows='5' cols='30'>
-                  {{height2}}
-                  </input>
-                  <br />
-                  <label for='weight3'>
-                     weight:
-                  </label>
-                  <br />
-                  <input id='weight3' name='weight3' rows='5' cols='30'>
-                  {{weight3}}
-                  </input>
-                  <br />
-                  <label for='age2'>
-                     age:
-                  </label>
-                  <br />
-                  <input id='age2' name='age2' rows='2' cols='30'>
+                  <input placeholder="Age"  id='age2' name='age2' rows='2' cols='30'>
                   {{age2}}
                   </input>
-                  <br />
+                  <input placeholder="Height (Inches)"  id='height2' name='height2' rows='5' cols='30'>
+                  {{height2}}
+                  </input>
+                  <input placeholder="Weight (Lbs)"  id='weight3' name='weight3' rows='5' cols='30'>
+                  {{weight3}}
+                  </input>
+                  
                   <button type='submit' value='Submit'>
                      Submit
                   </button>
                </form>
-</div>
-<div id="ibw-page">
+            </div> --}}
+               {{!-- <div id="orm-page" class="health-card">
+               <div id="heading" style="margin-top: 40px;">
+                  <h1 class="is-size-1" id="orm-header">One Rep Max Calculator</h1>
+                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                     Calculate your one rep max with your current set!</p>
+               </div>
+               <form class='ormInput'>
+                  <input placeholder="Weight (Lbs)" id='weight2' name='weight2' rows='5' cols='30'>
+                  {{weight2}}
+                  </input>
+                  <input placeholder="Reps" id='reps' name='reps' rows='2' cols='30'>
+                  {{reps}}
+                  </input>
+                  <button type='submit' value='Submit'>
+                     Submit
+                  </button>
+               </form>
+            </div> --}}
+               {{!-- <div id="ibw-page" class="health-card">
                <div id="heading" style="margin-top: 40px;">
                   <h1 class="is-size-1" id="orm-header">Ideal Body Weight Calculator</h1>
                   <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
                      Calculate your ideal body weight based on your height and age!</p>
-                  <hr>
                </div>
                <form class='ibwInput'>
-                  <br />
-                  <label for='age3'>
-                     age:
-                  </label>
-                  <br />
-                  <input id='age3' name='age3' rows='5' cols='30'>
+                  <input placeholder="Age"  id='age3' name='age3' rows='5' cols='30'>
                   {{age3}}
                   </input>
-                  <br />
-                  <label for='height3'>
-                     height:
-                  </label>
-                  <br />
-                  <input id='height3' name='height3' rows='2' cols='30'>
+                  <input placeholder="Height (Inches)"  id='height3' name='height3' rows='2' cols='30'>
                   {{height3}}
                   </input>
-                  <br />
                   <button type='submit' value='Submit'>
                      Submit
                   </button>
                </form>
-</div>
-               <script src="/js/calculators/bmi.js"></script>
+            </div> --}}
+         </body>
+         <script src="/js/calculators/bmi.js"></script>
 
 </html>
