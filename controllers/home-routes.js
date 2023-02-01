@@ -172,8 +172,6 @@ router.get(`/bmiinput/`, async (req, res) => {
   }
   });
 
-// GET BMI
-
 
 // GET BMI
 router.get(`/bmi/:age/:weight/:height`, async (req, res) => {
