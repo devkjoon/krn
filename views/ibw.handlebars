@@ -1,5 +1,6 @@
+{{!-- Formula for ideal body weight:110.23 LBS + 5.07 for each inch over 5 feet--}}
 
-    <div id="preloader">
+<div id="preloader">
          <div class="loader">
             <img src="/images/loader.gif" alt="#" />
          </div>
@@ -22,6 +23,7 @@
          </div>
       </nav>
       <div id="content">
+         <div id="bmi-wrap">
          <!-- Start header -->
          <header class="top-header">
             <div class="container">
@@ -38,7 +40,9 @@
             </div>
          </header>
   <div class="bmi-details">
-    <h3>BMI: {{stats.bmi}}</h3>
-    <h3>Health: {{stats.health}}</h3>
-     <h3>Healthy BMI Range: {{stats.healthy_bmi_range}}</h3>
+    <h3 id="ibw">IBW: </h3>
+     <a href="/bmiinput" class="back-btn">Back</a>
   </div>
+  </div>
+
+  <script src="/js/calculators/bmi.js"></script>
