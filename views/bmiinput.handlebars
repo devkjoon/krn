@@ -47,29 +47,54 @@
          </header>
 
          <body id="bmi-cont">
-         <div id="bmi-cont">
-            <div id="bmi-page" class="health-card">
-               <div id="heading" style="margin-top: 40px;">
-                  <h1 class="is-size-1" id="BMI-header">BMI Calculator</h1>
-                  <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
-                     Calculate your body mass index with your age, weight and height!</p>
+            <div id="bmi-cont">
+               <div id="bmi-page" class="health-card">
+                  <div id="heading" style="margin-top: 40px;">
+                     <h1 class="is-size-1" id="BMI-header">Body Measurements</h1>
+                     <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
+                        Input your age, weight, and height</p>
+                  </div>
+                  <form class='bmiInput'>
+                     <input placeholder="Age" id='age' name='age' rows='2' cols='30'>
+                     {{age}}
+                     </input>
+                     <select id='gender' name='gender' rows='2' cols='30'>
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        {{gender}}
+                     </select>
+                     {{gender}}
+                     </input>
+                     <input placeholder="Height (inches)" id='height' name='height' rows='5' cols='30'>
+                     {{height}}
+                     </input>
+                     <input placeholder="Weight (lbs)" id='weight' name='weight' rows='2' cols='30'>
+                     {{weight}}
+                     </input>
+                     <input placeholder="Neck (inches)" id='neck' name='neck' rows='2' cols='30'>
+                     {{neck}}
+                     </input>
+                     <input placeholder="Waist (inches)" id='waist' name='waist' rows='2' cols='30'>
+                     {{waist}}
+                     </input>
+                     <input placeholder="Hips (inches)" id='hips' name='hips' rows='2' cols='30'>
+                     {{hips}}
+                     </input>
+                     <select id='activitylevel' name='activitylevel' rows='2' cols='30'>
+                        <option value="level_1" selected>Sedentary: little or no exercise</option>
+                        <option value="level_2">Exercise 1-3 times/week</option>
+                        <option value="level_3">Exercise 4-5 times/week</option>
+                        <option value="level_4">Daily exercise or intense exercise 3-4 times/week</option>
+                        <option value="level_5">Intense exercise 6-7 times/week</option>
+                        <option value="level_6">Very intense exercise daily, or physical job</option>
+                        {{activitylevel}}
+                     </select>
+                     <button type='submit' value='Submit'>
+                        Submit
+                     </button>
+                  </form>
                </div>
-               <form class='bmiInput'>
-                  <input placeholder="Age"  id='age' name='age' rows='2' cols='30'>
-                  {{age}}
-                  </input>
-                  <input placeholder="Height (Inches)"  id='height' name='height' rows='5' cols='30'>
-                  {{height}}
-                  </input>
-                  <input placeholder="Weight (Lbs)"  id='weight' name='weight' rows='2' cols='30'>
-                  {{weight}}
-                  </input>
-                  <button type='submit' value='Submit'>
-                     Submit
-                  </button>
-               </form>
-            </div>
-            <div id="bmr-page" class="health-card">
+               {{!-- <div id="bmr-page" class="health-card">
                <div id="heading" style="margin-top: 40px;">
                   <h1 class="is-size-1" id="orm-header">Basal Metabolic Rate Calculator</h1>
                   <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
@@ -90,8 +115,8 @@
                      Submit
                   </button>
                </form>
-            </div>
-            <div id="orm-page" class="health-card">
+            </div> --}}
+               {{!-- <div id="orm-page" class="health-card">
                <div id="heading" style="margin-top: 40px;">
                   <h1 class="is-size-1" id="orm-header">One Rep Max Calculator</h1>
                   <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
@@ -108,8 +133,8 @@
                      Submit
                   </button>
                </form>
-            </div>
-            <div id="ibw-page" class="health-card">
+            </div> --}}
+               {{!-- <div id="ibw-page" class="health-card">
                <div id="heading" style="margin-top: 40px;">
                   <h1 class="is-size-1" id="orm-header">Ideal Body Weight Calculator</h1>
                   <p class="is-size-4 has-text-weight-light firstPara" id="BMI-para">
@@ -126,8 +151,8 @@
                      Submit
                   </button>
                </form>
-            </div>
+            </div> --}}
          </body>
-               <script src="/js/calculators/bmi.js"></script>
+         <script src="/js/calculators/bmi.js"></script>
 
 </html>
