@@ -8,7 +8,7 @@
    <nav id="sidebar">
       <div class="menu_section">
          <ul>
-            <li><a href="'/homepage'">Home</a></li>
+            <li><a href="/homepage">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="#contactForm">Contact us</a></li>
@@ -423,26 +423,24 @@
                               <form class="contact_form_inner" action="#">
                                  <fieldset>
                                     <div class="field">
-                                       <input type="text" name="name" id="name" placeholder="Your name">
+                                       <input type="text" name="name" id="sendername" placeholder="Your name" autocomplete="off">
                                        {{name}}
                                        </input>
                                     </div>
                                     <div class="field">
-                                       <input type="email" name="email" id="email" placeholder="Email">
-                                       {{email}}
+                                       <input type="text" name="email" id="senderemail" placeholder="Your Email" autocomplete="off">
                                        </input>
                                     </div>
                                     <div class="field">
-                                       <input type="text" name="phone" id="phone" placeholder="Phone number">
-                                       {{phone_no}}
+                                       <input type="text" name="phone" id="senderphone" placeholder="Your Phone Number" autocomplete="off">
                                        </input>
                                     </div>
                                     <div class="field">
-                                       <textarea placeholder="Message" id="message">{{message}}
+                                       <textarea placeholder="Message" id="sendermessage">
                                        </textarea>
                                     </div>
                                     <div class="field center">
-                                       <button class="margin-top_30 submit">SEND</button>
+                                       <button id="mailBtn" class="margin-top_30 submit">SEND</button>
                                     </div>
                                  </fieldset>
                               </form>
@@ -525,3 +523,4 @@
       <script src="/js/index.js"></script>
       <script src="/js/logout.js"></script>
       <script src="/js/contact-form-script.js"></script>
+      <script src="/js/mailing.js"></script>
