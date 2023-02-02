@@ -265,15 +265,39 @@
     color:rgb(2, 218, 189)
 }
 
-.bmi-details {
+.stat-details {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    box-shadow: 0px 0px 20px #888888;
+    height: 35vh;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.bmi-details-box {
-    background-color: white;
-    padding: 30px;
+.stat-box {
+    width: 25%;
+    margin: 10px 20px;
+    background-color: rgba(36, 35, 35, 0.759);
+    padding: 10px;
+    border-radius: 18px;
+}
+
+.stat-box h3 {
+    font-size: 30px;
+    color: rgba(8, 255, 173, 0.952);
+    font-family: "Bree Serif", serif;
+}
+
+.stat-background {
+    background-image: url("/images/group exercise.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.stat-output {
+    color: #f2f4f3
 }
