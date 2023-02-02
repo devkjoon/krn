@@ -274,8 +274,20 @@
 }
 
 .bmi-details-box {
-    background-color: white;
-    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(36, 35, 35, 0.959);
+    padding: 40px;
+    border-radius: 18px;
+}
+
+.bmi-details-box h3 {
+    font-size: 40px;
+    color: rgba(8, 255, 173, 0.952);
+    font-family: "Bree Serif", serif;
 }
 
 .bmi-output {
