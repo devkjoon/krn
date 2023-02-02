@@ -6,13 +6,13 @@ const options = {
   }
 };
 
-const options2 = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
-    'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-  }
-};
+// const options2 = {
+//   method: 'GET',
+//   headers: {
+//     'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
+//     'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+//   }
+// };
 
 const mealDiv = `<div id="mealWrap"></div>`
 
@@ -64,7 +64,7 @@ function mealPlanGen(event) {
 
             let url2 = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${parsedtitle.id}/information`;
 
-            fetch(url2, options2)
+            fetch(url2, options)
               .then(res => res.json())
               .then(json => {
 
