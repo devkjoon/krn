@@ -21,7 +21,7 @@
             </ul>
          </div>
       </nav>
-      <div id="content">
+      <div id="content" class="bmi-output">
          <!-- Start header -->
          <header class="top-header">
             <div class="container">
@@ -38,7 +38,9 @@
             </div>
          </header>
   <div class="bmi-details">
-    <h3>BMI: {{stats.bmi}}</h3>
+    <div class="bmi-details-box">
+      <h3>BMI: {{stats.bmi}}</h3>
     <h3>Health: {{stats.health}}</h3>
      <h3>Healthy BMI Range: {{stats.healthy_bmi_range}}</h3>
+     <h3>Calorie Intake: {{calintake.bmr}}</h3>
   </div>

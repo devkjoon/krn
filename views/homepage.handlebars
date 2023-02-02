@@ -1,146 +1,298 @@
 <div id="preloader">
-         <div class="loader">
-            <img src="images/loader.gif" alt="#" />
+   <div class="loader">
+      <img src="images/loader.gif" alt="#" />
+   </div>
+</div>
+<!-- END LOADER -->
+<div class="wrapper">
+   <nav id="sidebar">
+      <div class="menu_section">
+         <ul>
+            <li><a href="'/homepage'">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#contactForm">Contact us</a></li>
+            <li><a href="/exercisemain">Exercise</a></li>
+            <li><a href="/bmiinput">Health Stats</a></li>
+            <li><a id="logout" href="">Logout</a></li>
+            {{!-- <button id="logout">Logout</button> --}}
+         </ul>
+      </div>
+   </nav>
+   <div id="content">
+      <!-- Start header -->
+      <header class="top-header">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-6">
+                  <div class="logo_main">
+                     <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
+                        src="images/menu_icon.png"></button>
+               </div>
+            </div>
+         </div>
+      </header>
+      <!-- End header -->
+      <!-- Start Banner -->
+      <div class="ulockd-home-slider">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="pogoSlider" id="js-main-slider">
+                  <div class="pogoSlider-slide" style="background-image:url(images/deadlift.png);">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="slide_text white_fonts">
+                                 <h3>Are you ready for<br><strong class="theme_color">healthy choices?</strong></h3>
+                                 <br>
+                                 <a class="readmore_bt" href="#readMoreSection">Read More <i
+                                       class="fa fa-long-arrow-down custom"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="pogoSlider-slide" style="background-image:url(images/slider_1.png);">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="slide_text white_fonts">
+                                 <h3>Are you<br><strong class="theme_color">ready to</strong> change?</h3>
+                                 <br>
+                                 <a class="readmore_bt" href="#readMoreSection">Read More <i
+                                       class="fa fa-long-arrow-down custom"></i></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- .pogoSlider -->
+            </div>
          </div>
       </div>
-      <!-- END LOADER -->
-      <div class="wrapper">
-      <nav id="sidebar">
-         <div class="menu_section">
-            <ul>
-               <li><a href="'/homepage'">Home</a></li>
-               <li><a href="about.html">About</a></li>
-               <li><a href="services.html">Services</a></li>
-               <li><a href="contact">Contact us</a></li>
-               <li><a href="/mealplan">Meal Plan</a></li>
-               <li><a href="/exercisemain">Exercise</a></li>
-               <li><a href="/bmiinput">Health Stats</a></li>
-               <li><a id="logout" href="">Logout</a></li>
-               {{!-- <button id="logout">Logout</button> --}}
-
-            </ul>
-         </div>
-      </nav>
-      <div id="content">
-         <!-- Start header -->
-         <header class="top-header">
-            <div class="container">
-               <div class="row">
-                  <div class="col-sm-6">
-                     <div class="logo_main">
-                        <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+      <!-- End Banner -->
+      <!-- section -->
+      <div class="section about_section layout_padding half_bg_theme padding_bottom_0" id="readMoreSection">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="full text_align_right_img">
+                     <img src="images/cliff-yoga.jpg" alt="#" />
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="full paddding_left_15">
+                     <div class="heading_main text_align_left">
+                        <h2><span class="theme_color">Welcome</span><br> To KRN Fitness Aide</h2>
                      </div>
                   </div>
-                  <div class="col-sm-6">
-                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img src="images/menu_icon.png"></button>
+                  <div class="full paddding_left_15">
+                     <p>KRN is an app aimed at helping you in your fitness transformation. Whether you're a die hard gym
+                        rat, or have never gotten off of the couch, we're here to help!</p>
+                     <p>Fixing your flab has never been easier with KRN's features. We offer customized meal plans,
+                        targeted exercises, BMI calculators, and more!</p>
+                     <p>We literally will not rest until you reach your goal..seriously. I haven't slept in hours.
+                        Please just commit to your New Year's resolution..I haven't seen my kids in two weeks.</p>
+                  </div>
+                  <div class="full paddding_left_15 margin-top_30">
+                     <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
                   </div>
                </div>
             </div>
-         </header>
-         <!-- End header -->
-         <!-- Start Banner -->
-         <div class="ulockd-home-slider">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="pogoSlider" id="js-main-slider">
-                     <div class="pogoSlider-slide" style="background-image:url(images/deadlift.png);">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <div class="slide_text white_fonts">
-                                    <h3>Are you ready for<br><strong class="theme_color">healthy choices?</strong></h3>
-                                    <br>
-                                    <a class="readmore_bt" href="#readMoreSection">Read More <i class="fa fa-long-arrow-down custom" ></i></a>
-                                 </div>
-                              </div>
+         </div>
+      </div>
+      <!-- end section -->
+      <!-- section -->
+      <div class="section about_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full paddding_left_15">
+                     <div class="heading_main text_align_left">
+                        <h2><span class="theme_color">we </span>provide services</h2>
+                     </div>
+                  </div>
+                  <div class="full service_pro_section">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="full services_list">
+                              <ul>
+                                 <li><img src="images/check_icon.png" alt="#" /> WORKOUTS</li>
+                                 <li><img src="images/check_icon.png" alt="#" /> CALENDAR</li>
+                                 <li><img src="images/check_icon.png" alt="#" /> RECIPES</li>
+                                 <li><img src="images/check_icon.png" alt="#" /> RENPHO</li>
+                                 <li><img src="images/check_icon.png" alt="#" /> WATER TRACKER</li>
+                                 <li><img src="images/check_icon.png" alt="#" /> MACRO/CALORIE COUNTER</li>
+                              </ul>
+                           </div>
+                           <div class="full paddding_left_15 margin-top_30">
+                              <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
                            </div>
                         </div>
-                     </div>
-                     <div class="pogoSlider-slide" style="background-image:url(images/slider_1.png);">
-                        <div class="container">
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <div class="slide_text white_fonts">
-                                    <h3>Are you<br><strong class="theme_color">ready to</strong> change?</h3>
-                                    <br>
-                                    <a class="readmore_bt" href="#readMoreSection">Read More <i class="fa fa-long-arrow-down custom" ></i></a>
-                                 </div>
-                              </div>
+                        <div class="col-md-6 text_align_right">
+                           <div class="full">
+                              <img class="img-responsive" src="/images/Color logo - no background.png" alt="#" />
                            </div>
                         </div>
                      </div>
                   </div>
-                  <!-- .pogoSlider -->
                </div>
             </div>
          </div>
-         <!-- End Banner -->
-         <!-- section -->
-         <div class="section about_section layout_padding half_bg_theme padding_bottom_0" id="readMoreSection">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="full text_align_right_img">
-                        <img src="images/cliff-yoga.jpg" alt="#" />
+      </div>
+      <!-- end section -->
+      <!-- section -->
+      <div class="section team_section layout_padding">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full">
+                     <div class="heading_main text_align_center">
+                        <h2><span class="theme_color">Popular</span><br> Offerings at <span
+                              class="theme_color">KRN</span></h2>
                      </div>
                   </div>
-                  <div class="col-md-6">
-                     <div class="full paddding_left_15">
-                        <div class="heading_main text_align_left">
-                           <h2><span class="theme_color">Welcome</span><br> To KRN Fitness Aide</h2>
+                  <div class="full">
+                     <div class="row">
+                        <div class="col-sm-12 col-md-10 col-lg-10 offset-md-1 offset-lg-1">
+                           <div id="demo" class="popolar_fitness carousel slide" data-ride="carousel">
+                              <!-- The slideshow -->
+                              <div class="carousel-inner">
+                                 <div class="carousel-item active">
+                                    <div class="row">
+                                       <div class="col-lg-4 col-md-4 col-sm-12">
+                                          <div class="full blog_img_popular">
+                                             <img class="img-responsive" src="images/foodthumb.jpg" alt="#" />
+                                             <div class="overlay_bt">
+                                                <a class="main_bt" href="#">Read More <i
+                                                      class="fa fa-long-arrow-right"></i></a>
+                                                <p>Nutrition Guide</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-4 col-md-4 col-sm-12">
+                                          <div class="full blog_img_popular">
+                                             <img class="img-responsive" src="images/exercisethumb.png" alt="#" />
+                                             <div class="overlay_bt">
+                                                <a class="main_bt" href="/exercisemain">Read More <i
+                                                      class="fa fa-long-arrow-right"></i></a>
+                                                <p>Targeted Workouts</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-4 col-md-4 col-sm-12">
+                                          <div class="full blog_img_popular">
+                                             <img class="img-responsive" src="images/scalethumb.jpeg" alt="#" />
+                                             <div class="overlay_bt">
+                                                <a class="main_bt" href="/bmiinput">Read More <i
+                                                      class="fa fa-long-arrow-right"></i></a>
+                                                <p>BMI Calculator</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="carousel-item">
+                                    <div class="row">
+                                       <div class="col-lg-4 col-md-4 col-sm-12">
+                                          <div class="full blog_img_popular">
+                                             <img class="img-responsive" src="images/foodthumb.jpg" alt="#" />
+                                             <div class="overlay_bt">
+                                                <a class="main_bt" href="#">Read More <i
+                                                      class="fa fa-long-arrow-right"></i></a>
+                                                <p>Nutrition Guide</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-4 col-md-4 col-sm-12">
+                                          <div class="full blog_img_popular">
+                                             <img class="img-responsive" src="images/exercisethumb.png" alt="#" />
+                                             <div class="overlay_bt">
+                                                <a class="main_bt" href="/exercisemain">Read More <i
+                                                      class="fa fa-long-arrow-right"></i></a>
+                                                <p>Targeted Workouts</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-4 col-md-4 col-sm-12">
+                                          <div class="full blog_img_popular">
+                                             <img class="img-responsive" src="images/scalethumb.jpeg" alt="#" />
+                                             <div class="overlay_bt">
+                                                <a class="main_bt" href="/bmiinput">Read More <i
+                                                      class="fa fa-long-arrow-right"></i></a>
+                                                <p>BMI Calculator</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Left and right controls -->
+                              <a class="carousel-control-prev" href="#demo" data-slide="prev"><i
+                                    class="fa fa-long-arrow-left"></i></a>
+                              <a class="carousel-control-next" href="#demo" data-slide="next"><i
+                                    class="fa fa-long-arrow-right"></i></a>
+                           </div>
                         </div>
                      </div>
-                     <div class="full paddding_left_15">
-                        <p>KRN is an app aimed at helping you in your fitness transformation. Whether you're a die hard gym rat, or have never gotten off of the couch, we're here to help!</p>
-                        <p>Fixing your flab has never been easier with KRN's features. We offer customized meal plans, targeted exercises, BMI calculators, and more!</p>
-                        <p>We literally will not rest until you reach your goal..seriously. I haven't slept in hours. Please just commit to your New Year's resolution..I haven't seen my kids in two weeks.</p>
-                     </div>
-                     <div class="full paddding_left_15 margin-top_30">
+                  </div>
+                  <div class="full paddding_left_15 margin-top_30">
+                     <div class="center">
                         <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <!-- end section -->
-         <!-- section -->
-         <div class="section about_section layout_padding">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="full paddding_left_15">
-                        <div class="heading_main text_align_left">
-                           <h2><span class="theme_color">we </span>provide services</h2>
-                        </div>
+      </div>
+      <!-- end section -->
+      <!-- section -->
+      <div class="section story_section layout_padding">
+         <div class="container-fluid">
+            <div class="row white_bg">
+               <div class="col-md-6">
+                  <div class="full story_blog paddding_left_15">
+                     <div class="heading_main text_align_left">
+                        <h2><span class="theme_color">Our</span><br> Success Stories</h2>
                      </div>
-                     <div class="full service_pro_section">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="full services_list">
-                                 <ul>
-                                    <li><img src="images/check_icon.png" alt="#" /> WORKOUTS</li>
-                                    <li><img src="images/check_icon.png" alt="#" /> CALENDAR</li>
-                                    <li><img src="images/check_icon.png" alt="#" /> RECIPES</li>
-                                    <li><img src="images/check_icon.png" alt="#" /> RENPHO</li>
-                                    <li><img src="images/check_icon.png" alt="#" /> WATER TRACKER</li>
-                                    <li><img src="images/check_icon.png" alt="#" /> MACRO/CALORIE COUNTER</li>
-                                 </ul>
-                              </div>
-                              <div class="full paddding_left_15 margin-top_30">
-                                 <a class="main_bt" href="#">Read More <i class="fa fa-long-arrow-right"></i></a>
-                              </div>
-                           </div>
-                           <div class="col-md-6 text_align_right">
-                              <div class="full">
-                                 <img class="img-responsive" src="/images/Color logo - no background.png" alt="#" />
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                  </div>
+                  <div class="full paddding_left_15">
+                     <p>Meet Tom, a man who was once known as "Two-Pizza Tom." Tom was notorious for his love of pizza
+                        and his inability to resist a good slice, no matter the time of day. But one day, Tom decided
+                        enough was enough and he needed to make a change. That's when he stumbled upon KRN, the ultimate
+                        fitness tracking and goal setting application.</p>
+                     <p>With KRN, Tom was able to track his daily calorie intake and monitor his exercise levels. He set
+                        a goal to lose weight and improve his overall health, and with the help of KRN, he was able to
+                        do just that! But it wasn't all sunshine and rainbows for Tom. He had to say goodbye to his
+                        beloved pizza, at least for a little while.</p>
+                     <p>After a few weeks of sticking to his plan, Tom was shocked to see the scale start moving in the
+                        right direction. He was able to fit into clothes that had been sitting in the back of his closet
+                        for years, and he even had the energy to take his dog for a walk around the block.</p>
+                     <p>But the real success came when Tom was invited to a pizza party at his friend's house. He was
+                        tempted to indulge in his favorite food, but he thought of all the progress he had made with KRN
+                        and decided to stick to his healthy choices. And when he looked around the room, he saw that all
+                        his friends were eating pizza, and he felt proud of himself for not giving in.</p>
+                     <p>Now, Tom is proud to be known as "Kale-Eating Tom" and he's even coverted some of his
+                        pizza-loving friends to KRN. He's living proof that with KRN, you can have your kale and eat it
+                        too!</p>
+                  </div>
+                  <div class="full paddding_left_15 margin-top_30">
+                     <a class="main_bt" href="#">Read More ></a>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="full text_align_right_img">
+                     <img class="img-responsive" src="/images/liam.png" alt="#" />
                   </div>
                </div>
             </div>
          </div>
+<<<<<<< HEAD
          <!-- end section -->
          <!-- section -->
          <div class="section team_section layout_padding">
@@ -235,159 +387,141 @@
                      </div>
                   </div>
                </div>
+=======
+      </div>
+      <!-- end section -->
+      <div class="section">
+         <div class="row">
+            <div class="heading_main text_align_center">
+               <h2><span class="theme_color">Contact </span> us</h2>
+>>>>>>> 771061936b83c5453dc57710af591d9c332859a6
             </div>
          </div>
-         <!-- end section -->
-         <!-- section -->
-         <div class="section story_section layout_padding">
-            <div class="container-fluid">
-               <div class="row white_bg">
-                  <div class="col-md-6">
-                     <div class="full story_blog paddding_left_15">
-                        <div class="heading_main text_align_left">
-                           <h2><span class="theme_color">Our</span><br> Success Stories</h2>
-                        </div>
-                     </div>
-                     <div class="full paddding_left_15">
-                        <p>Meet Tom, a man who was once known as "Two-Pizza Tom." Tom was notorious for his love of pizza and his inability to resist a good slice, no matter the time of day. But one day, Tom decided enough was enough and he needed to make a change. That's when he stumbled upon KRN, the ultimate fitness tracking and goal setting application.</p>
-                        <p>With KRN, Tom was able to track his daily calorie intake and monitor his exercise levels. He set a goal to lose weight and improve his overall health, and with the help of KRN, he was able to do just that! But it wasn't all sunshine and rainbows for Tom. He had to say goodbye to his beloved pizza, at least for a little while.</p>
-                        <p>After a few weeks of sticking to his plan, Tom was shocked to see the scale start moving in the right direction. He was able to fit into clothes that had been sitting in the back of his closet for years, and he even had the energy to take his dog for a walk around the block.</p>
-                        <p>But the real success came when Tom was invited to a pizza party at his friend's house. He was tempted to indulge in his favorite food, but he thought of all the progress he had made with KRN and decided to stick to his healthy choices. And when he looked around the room, he saw that all his friends were eating pizza, and he felt proud of himself for not giving in.</p>
-                        <p>Now, Tom is proud to be known as "Kale-Eating Tom" and he's even coverted some of his pizza-loving friends to KRN. He's living proof that with KRN, you can have your kale and eat it too!</p>
-                     </div>
-                     <div class="full paddding_left_15 margin-top_30">
-                        <a class="main_bt" href="#">Read More ></a>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="full text_align_right_img">
-                        <img class="img-responsive" src="/images/liam.png" alt="#" />
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- end section -->
-         <div class="section">
+      </div>
+      <!-- section -->
+      <div class="section contact_section" id="contactForm">
+         <div class="container-fluid">
             <div class="row">
-               <div class="heading_main text_align_center">
-                  <h2><span class="theme_color">Contact </span> us</h2>
-               </div>
-            </div>
-         </div>
-         <!-- section -->
-         <div class="section contact_section">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-md-6 padding_0">
-                     <div class="full">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <div class="full map_section">
-                                 <div id="map">
-                                    <div id="googleMap" style="width:100%;height:440px;"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-6 padding_0">
-                     <div class="full">
-                        <div class="row">
-                           <div class="col-sm-12 col-md-10 offset-lg-1">
-                              <div class="full contact_form">
-                                 <form class="contact_form_inner" action="#">
-                                    <fieldset>
-                                       <div class="field">
-                                          <input type="text" name="name" placeholder="Your name" />
-                                       </div>
-                                       <div class="field">
-                                          <input type="email" name="email" placeholder="Email" />
-                                       </div>
-                                       <div class="field">
-                                          <input type="text" name="phone_no" placeholder="Phone number" />
-                                       </div>
-                                       <div class="field">
-                                          <textarea placeholder="Message"></textarea>
-                                       </div>
-                                       <div class="field center">
-                                          <button class="margin-top_30">SEND</button>
-                                       </div>
-                                    </fieldset>
-                                 </form>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- end section -->
-         <!-- Start Footer -->
-         <footer class="footer-box">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12 white_fonts">
+               <div class="col-md-6 padding_0">
+                  <div class="full">
                      <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-4">
-                           <div class="full">
-                              <img class="img-responsive" src="/images/Color logo - no background.png" alt="#"/>
-                           </div>
-                           <div class="full white_fonts">
-                              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly</p>
-                           </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                           <div class="full">
-                              <div class="footer_blog full white_fonts">
-                                 <h3>ADDRESS</h3>
-                                 <p>Address: 73 Canal Street, New York, NY<br>Tel: +1 123 456 789<br>Fax: +1 123 456 789<br>Email: support@vigorfit.com</p>
-                              </div>
-                              <div class="full">
-                                 <ul class="social_icon">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                           <div class="full">
-                              <div class="footer_blog full white_fonts">
-                                 <h3>OUR TIMINGS</h3>
-                              </div>
-                              <div class="full timetable_blog">
-                                 <ul class="time_table text_align_left">
-                                    <li>Monday</li>
-                                    <li>Tuesday</li>
-                                    <li>Thursday</li>
-                                    <li>Friday</li>
-                                    <li>Saturday</li>
-                                    <li>Sunday</li>
-                                 </ul>
-                                 <ul class="time_table text_align_right">
-                                    <li>Monday</li>
-                                    <li>Tuesday</li>
-                                    <li>Thursday</li>
-                                    <li>Friday</li>
-                                    <li>Saturday</li>
-                                    <li>Sunday</li>
-                                 </ul>
+                        <div class="col-sm-12">
+                           <div class="full map_section">
+                              <div id="map">
+                                 <div id="googleMap" style="width:100%;height:440px;"></div>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
+               <div class="col-md-6 padding_0">
+                  <div class="full">
+                     <div class="row">
+                        <div class="col-sm-12 col-md-10 offset-lg-1">
+                           <div class="full contact_form">
+                              <form class="contact_form_inner" action="#">
+                                 <fieldset>
+                                    <div class="field">
+                                       <input type="text" name="name" id="name" placeholder="Your name">
+                                       {{name}}
+                                       </input>
+                                    </div>
+                                    <div class="field">
+                                       <input type="email" name="email" id="email" placeholder="Email">
+                                       {{email}}
+                                       </input>
+                                    </div>
+                                    <div class="field">
+                                       <input type="text" name="phone" id="phone" placeholder="Phone number">
+                                       {{phone_no}}
+                                       </input>
+                                    </div>
+                                    <div class="field">
+                                       <textarea placeholder="Message" id="message">{{message}}
+                                       </textarea>
+                                    </div>
+                                    <div class="field center">
+                                       <button class="margin-top_30 submit">SEND</button>
+                                    </div>
+                                 </fieldset>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-         </footer>
-         <!-- End Footer -->
+         </div>
+      </div>
+      <!-- end section -->
+      <!-- Start Footer -->
+      <footer class="footer-box">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 white_fonts">
+                  <div class="row">
+                     <div class="col-sm-12 col-md-12 col-lg-4">
+                        <div class="full">
+                           <img class="img-responsive" src="/images/Color logo - no background.png" alt="#" />
+                        </div>
+                        <div class="full white_fonts">
+                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                              suffered alteration in some form, by injected humour, or randomised words which don't look
+                              even slightly</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="full">
+                           <div class="footer_blog full white_fonts">
+                              <h3>ADDRESS</h3>
+                              <p>Address: 73 Canal Street, New York, NY<br>Tel: +1 123 456 789<br>Fax: +1 123 456
+                                 789<br>Email: support@vigorfit.com</p>
+                           </div>
+                           <div class="full">
+                              <ul class="social_icon">
+                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="full">
+                           <div class="footer_blog full white_fonts">
+                              <h3>OUR TIMINGS</h3>
+                           </div>
+                           <div class="full timetable_blog">
+                              <ul class="time_table text_align_left">
+                                 <li>Monday</li>
+                                 <li>Tuesday</li>
+                                 <li>Thursday</li>
+                                 <li>Friday</li>
+                                 <li>Saturday</li>
+                                 <li>Sunday</li>
+                              </ul>
+                              <ul class="time_table text_align_right">
+                                 <li>Monday</li>
+                                 <li>Tuesday</li>
+                                 <li>Thursday</li>
+                                 <li>Friday</li>
+                                 <li>Saturday</li>
+                                 <li>Sunday</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- End Footer -->
       <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
 
       <script src="/js/index.js"></script>
       <script src="/js/logout.js"></script>
+      <script src="/js/contact-form-script.js"></script>
