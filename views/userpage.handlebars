@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Userpage</title>
+   </head>
+   <div id="preloader">
+      <div class="loader">
+         <img src="images/loader.gif" alt="#" />
+      </div>
+   </div>
+   <!-- END LOADER -->
+   <div class="wrapper">
+      <nav id="sidebar">
+         <div class="menu_section">
+            <ul>
+               <li><a href="/homepage">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="services.html">Services</a></li>
+               <li><a href="contact">Contact us</a></li>
+               <li><a href="/mealplan">Meal Plan</a></li>
+               <li><a href="/exercisemain">Exercise</a></li>
+               <li><a href="/bmiinput">Health Stats</a></li>
+               <li><a id="logout" href="">Logout</a></li>
+               {{!-- <button id="logout">Logout</button> --}}
+            </ul>
+         </div>
+      </nav>
+      <div id="bmi-wrap">
+         <!-- Start header -->
+         <header class="top-header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="logo_main">
+                        <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
+                           src="/images/menu_icon.png"></button>
+                  </div>
+               </div>
+            </div>
+         </header>
+
+<body>
+  <div id="profile-container">
+    <form id="profile-form">
+      <label for="profile-photo">Profile Photo:</label>
+      <img id="profile-photo-preview" src="#" alt="Profile Photo Preview">
+      <input type="file" id="profile-photo-input" name="profile-photo-input">
+      <br><br>
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio"></textarea>
+      <br><br>
+      <label for="status">Status:</label>
+      <input type="text" id="status" name="status">
+      <br><br>
+      <label for="notes">Notes:</label>
+      <textarea id="notes" name="notes"></textarea>
+      <br><br>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <script>
+   <script src="/js/userpage.js"></script>
+  </script>
+</body>
+</html>
