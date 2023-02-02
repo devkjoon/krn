@@ -264,3 +264,34 @@
     font-size: 25px;
     color:rgb(2, 218, 189)
 }
+
+.bmi-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-shadow: 0px 0px 20px #888888;
+}
+
+.bmi-details-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(36, 35, 35, 0.959);
+    padding: 40px;
+    border-radius: 18px;
+}
+
+.bmi-details-box h3 {
+    font-size: 40px;
+    color: rgba(8, 255, 173, 0.952);
+    font-family: "Bree Serif", serif;
+}
+
+.bmi-output {
+    background-image: url("/images/group exercise.png");
+    background-size: cover;
+    background-position: center;
+}
