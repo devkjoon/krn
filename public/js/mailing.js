@@ -1,6 +1,17 @@
 
-    document.querySelector("#mailBtn").addEventListener("click", () => {
-    window.location = `/mail/:${$("#sendername").val()}/:${$("#senderemail").val()}/:${$("#senderphone").val()}/:${$("#sendermessage").val()}`;
+
+
+
+    $("#mailBtn").on("click", (e) => {
+
+      const message = $("#sendermessage").val()
+      const username = $("#sendername").val()
+      const email = $("#senderemail").val()
+      const phone = $("#senderphone").val()
+
+
+      window.location = `/mail/${username}/${message}/${email}/${phone}`
+
 })
 
 
