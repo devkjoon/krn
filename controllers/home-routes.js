@@ -2,6 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Workout, Exercises, Bmi } = require('../models');
 const Mealplan = require('../models/meal');
+const nodemailer = require("nodemailer")
+
 
 const logRequest = (req, res, next) => {
   console.log(`Received ${req.method} request at ${req.url}`);
@@ -217,22 +219,6 @@ const height = (req.params.height*2.54)
       }
       });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       //Get bmiInput from user
 router.get(`/mealplan/`, async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
@@ -289,6 +275,44 @@ router.get(`/mealplan/:time/:calories/:diet/:exclsuion`, async (req, res) => {
         res.status(400).json(err);
       }
       });
+
+      router.get("/mail/:sendername/:senderemail/:senderphone/:sendermessage", (req, res) => {
+
+
+async function main() {
+    // Generate test SMTP service account from ethereal.email
+    // Only needed if you don't have a real mail account for testing
+    let testAccount = await nodemailer.createTestAccount();
+  
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: "smtp.ethereal.email",
+      port: 587,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: testAccount.user, // generated ethereal user
+        pass: testAccount.pass, // generated ethereal password
+      },
+    });
+  
+    // send mail with defined transport object
+    let info = await transporter.sendMail({
+      from: `${req.params.senderemail}`, // sender address
+      to: "liamallen343@gmail.com", // list of receivers
+      subject: `${req.params.sendername}, ${req.params.senderphone}`, // Subject line
+      text: `${req.params.sendermessage}`, // plain text body
+    });
+  
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+  
+    // Preview only available when sending through an Ethereal account
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+  }
+  
+        main().catch(console.error);
+      })
 
 
 
