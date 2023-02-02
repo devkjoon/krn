@@ -1,5 +1,14 @@
-// const fetch = require('node-fetch');
-// const fitness = require("fitness-calc");
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '06ed075c2bmsh028e8aca739c630p1050c5jsn0053a426db18',
+    'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
+  }
+};
+
+// const weight = (req.params.weight / 2.205)
+// const height = (req.params.height * 2.54)
+
 
 async function oneRepMax(e) {
   e.preventDefault();
@@ -10,6 +19,37 @@ async function oneRepMax(e) {
   const result = oneRepMax(weight, reps);
   return result
 }
+
+const bmiDiv = `<div id="bmiWrap"></div>`
+
+function bmiInput(event) {
+  event.preventDefault();
+  const age = parseInt(document.querySelector('#age').value);
+  const height = parseInt(document.querySelector('#height').value) * 2.54;
+  const weight = parseInt(document.querySelector('#weight').value) / 2.205;
+  let url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${age}&weight=${weight}&height=${height}`;
+
+  fetch(url, options)
+  .then(res => res.json())
+  .then(json => {
+    
+    console.log(json)
+
+    $("#bmiCont").empty()
+    $("#bmiCont").append(bmiDiv)
+    
+    
+    const bmiContent = 
+    `<div class="bmiCard">
+    <p class="ageValue">${json.data.bmi}</p>
+    <p class="heightValue">${json.data.health}</p>
+    <p class="weightValue">${json.data.healthy_bmi_range}</p>
+    </div>`
+
+    console.log(bmiContent)
+
+    $("#bmiWrap").append(bmiContent)
+})}
 
 // async function basalMetabolicRate(e) {
 //   e.preventDefault();
@@ -33,44 +73,30 @@ async function oneRepMax(e) {
 // }
 
 
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '06ed075c2bmsh028e8aca739c630p1050c5jsn0053a426db18',
-    'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
-  }
-};
 
-const options2 = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '06ed075c2bmsh028e8aca739c630p1050c5jsn0053a426db18',
-    'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
-  }
-};
 
-const healthDiv = `<div id="healthWrap"></div>`
+// const healthDiv = `<div id="bmiInput"></div>`
 
-async function newFormHandler(event) {
-  event.preventDefault();
-  const age = parseInt(document.querySelector('#age').value);
-  const height = parseInt(document.querySelector('#height').value);
-  const weight = parseInt(document.querySelector('#weight').value);
-  const gender = document.querySelector('#gender').value;
-  const neck = parseInt(document.querySelector('#neck').value);
-  const waist = parseInt(document.querySelector('#waist').value);
-  const hips = parseInt(document.querySelector('#hips').value);
-  const activitylevel = document.querySelector('#activitylevel').value;
-  window.location = `/bmi/${age}/${weight}/${height}`;
+// async function newFormHandler(event) {
+//   event.preventDefault();
+//   const age = parseInt(document.querySelector('#age').value);
+//   const height = parseInt(document.querySelector('#height').value);
+//   const weight = parseInt(document.querySelector('#weight').value);
+//   const gender = document.querySelector('#gender').value;
+//   const neck = parseInt(document.querySelector('#neck').value);
+//   const waist = parseInt(document.querySelector('#waist').value);
+//   const hips = parseInt(document.querySelector('#hips').value);
+//   const activitylevel = document.querySelector('#activitylevel').value;
+//   window.location = `/bmi/${age}/${weight}/${height}`;
 
-}
+// }
 
 
 
 
 
 
-document.querySelector(".bmiInput").addEventListener("submit", newFormHandler);
+$(".bmiInputs").on("submit", bmiInput);
 // document.querySelector(".ormInput").addEventListener("submit", newFormHandler);
 // document.querySelector(".bmrInput").addEventListener("submit", newFormHandler);
 // document.querySelector(".ibwInput").addEventListener("submit", newFormHandler);
