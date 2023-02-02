@@ -264,3 +264,16 @@
     font-size: 25px;
     color:rgb(2, 218, 189)
 }
+
+.bmi-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-shadow: 0px 0px 20px #888888;
+}
+
+.bmi-details-box {
+    background-color: white;
+    padding: 30px;
+}
