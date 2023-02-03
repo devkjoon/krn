@@ -153,6 +153,16 @@ router.get("/homepage", (req, res) => {
 })
 
 
+
+router.get("/water", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+    res.render("water");
+    return;
+  }
+})
+
 //Temporary route for exercises
 router.get("/exercisemain", (req, res) => {
   if (!req.session.loggedIn) {
@@ -342,7 +352,7 @@ router.post('/', async (req, res) => {
         
           let info = await transporter.sendMail({
             from: `"${req.params.username}" <krnhealthwellness@gmail.com>`, 
-            to: "countryplayzyt@gmail.com", 
+            to: "krnhealthwellness@gmail.com", 
             subject: `Customer Message | ${req.params.email} | ${req.params.phone}`, 
             text: `${req.params.message}`, 
           });
