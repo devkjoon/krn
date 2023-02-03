@@ -20,7 +20,6 @@ color: #1c4a6e;
     flex-direction:column;
     align-items: center;
     justify-content: center;
-
 }
 
 .side-info svg {
@@ -81,4 +80,34 @@ cursor: pointer;
 
 button:disabled {
     background-color: #a5d7fe;
+}
+
+#water-wrap{
+    width: 100vw;
+    height: 110vh;
+    padding-top: 50px;
+    background-image: url("/images/gymbg_2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+#water-cont{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#water-wrap header{
+    height: 100px;
+    width: 70%;
+    margin: 0 15%;
+}
+
+#water-cont h1{
+    font-size: 30px;
+
 }
