@@ -28,95 +28,7 @@ router.get('/', async (req, res) => {
   });
 
 });
-//   });
-// } catch (err) {
-//   console.log(err);
-//   res.status(500).json(err);
-// }
 
-
-// GET for by body parts
-router.get('/Exercises/bodyPartList', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the Exercises
-    try {
-      const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPartList`;
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
-          'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-        }
-      };
-      const response = await fetch(url, options);
-      const exercises = await response.json();
-      console.log(exercises)
-      res.render('bodypartlist', { bodypartlist, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
-
-
-// GET by muscle group
-router.get('/Exercises/targetList', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the Exercises
-    try {
-      const url = `https://exercisedb.p.rapidapi.com/exercises/targetList`;
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
-          'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-        }
-      };
-      const response = await fetch(url, options);
-      const exercises = await response.json();
-      console.log(exercises)
-      res.render('targetList', { targetlist, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
-
-// Get by id
-
-router.get('/Exercises/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the Exercises
-    try {
-      const url = `https://exercisedb.p.rapidapi.com/exercises/exercise/${req.params.id}`;
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
-          'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-        }
-      };
-      const response = await fetch(url, options);
-      const exercises = await response.json();
-      console.log(exercises)
-      res.render('exercises', { exercises, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
 
 
 // CREATE a new user
@@ -270,7 +182,7 @@ router.post('/', async (req, res) => {
 
 
 
-      //Get bmiInput from user
+      //Get mealplan from user
       router.get(`/mealplan/`, async (req, res) => {
         // If the user is not logged in, redirect the user to the login page
         if (!req.session.loggedIn) {
@@ -281,51 +193,6 @@ router.post('/', async (req, res) => {
         }
       });
 
-      // GET BMI
-
-
-      // GET BMI
-      router.get(`/mealplan/:time/:calories/:diet/:exclsuion`, async (req, res) => {
-        // If the user is not logged in, redirect the user to the login page
-        if (!req.session.loggedIn) {
-          res.redirect('/login');
-        } else {
-          // If the user is logged in, allow them to view the Exercises
-          try {
-            // const userInput = req.params.bmi.split('-')
-            // req.query.age work on this
-            const mealurl = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate?timeFrame=${time}&targetCalories=${calories}&diet=${diet}&exclude=${exclusion}`;
-            const mealoptions = {
-              method: 'GET',
-              headers: {
-                'X-RapidAPI-Key': '0f00cbf66emshdf2bcb63e49f39cp179d81jsnbb95e24d5dcc',
-                'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-              }
-            };
-            const response = await fetch(mealurl, mealoptions);
-            let stats = await response.json();
-            stats = stats.data
-            res.render('mealplan', { stats, loggedIn: req.session.loggedIn });
-          } catch (err) {
-            console.log(err);
-            res.status(500).json(err);
-          }
-        }
-      });
-
-      router.post('/', async (req, res) => {
-        try {
-          const mealPlanData = await Mealplan.create({
-            time: req.body.time,
-            calories: req.body.calories,
-            diet: req.body.diet,
-            exclusion: req.body.exclusion
-          });
-          res.status(200).json(mealPlanData)
-        } catch (err) {
-          res.status(400).json(err);
-        }
-      });
 
       router.get("/mail/:username/:message/:email/:phone", (req, res) => {
 
@@ -342,7 +209,7 @@ router.post('/', async (req, res) => {
         
           let info = await transporter.sendMail({
             from: `"${req.params.username}" <krnhealthwellness@gmail.com>`, 
-            to: "countryplayzyt@gmail.com", 
+            to: "krnhealthwellness@gmail.com", 
             subject: `Customer Message | ${req.params.email} | ${req.params.phone}`, 
             text: `${req.params.message}`, 
           });
