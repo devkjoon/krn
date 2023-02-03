@@ -40,29 +40,30 @@ function bmiInput(event) {
 
     fetch(calorieUrl, options)
       .then(res => res.json())
-      .then(json => console.log(json))
-      .catch(err => console.error('error:' + err));
+      .then(json2 => {
 
-      $("#bmiCont").empty()
-      $("#bmiCont").append(bmiDiv)
-      
-      const bmiContent = 
-      `<div class="bmiCard">
-      <p class="ageValue">${json.data.bmi}</p>
-      <p class="heightValue">${json.data.health}</p>
-      <p class="weightValue">${json.data.healthy_bmi_range}</p>
-      <p class="bmrValue">${json.data.bmr}</p>
-      <p class="maintainValue">${json.data.goals}</p>
-      </div>`
-  
-      console.log(bmiContent)
-  
-      $("#bmiWrap").append(bmiContent)
+        $("#bmiCont").empty()
+        $("#bmiCont").append(bmiDiv)
+        
+        const bmiContent = 
+        `<div class="bmiCard">
+        <p class="ageValue">${json.data.bmi}</p>
+        <p class="heightValue">${json.data.health}</p>
+        <p class="weightValue">${json.data.healthy_bmi_range}</p>
+        <p class="bmrValue">${json2.data.BMR}</p>
+        <p class="maintainValue">${json2.data.goals["maintain weight"]}</p>
+        </div>`
+
+        console.log(json2)
+    
+        console.log(bmiContent)
+    
+        $("#bmiWrap").append(bmiContent)
 
 
   })
   .catch(err => console.error('error:' + err));
-}
+})}
 
 
 $(".bmiInputs").on("submit", bmiInput);
