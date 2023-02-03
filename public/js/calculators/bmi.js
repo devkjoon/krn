@@ -101,12 +101,14 @@ function bmiInput(event) {
         $("#bmiCont").append(bmiDiv)
         
         const bmiContent = 
-        `<div class="bmiCard">
-        <p class="ageValue">${json.data.bmi}</p>
-        <p class="heightValue">${json.data.health}</p>
-        <p class="weightValue">${json.data.healthy_bmi_range}</p>
-        <p class="bmrValue">${json2.data.BMR}</p>
-        <p class="maintainValue">${json2.data.goals["maintain weight"]}</p>
+        `<div class="stat-details">
+        <div class="stat-box">
+        <h3>Your Current BMI: <span class="stat-output">${json.data.bmi}</span></h3>
+        <h3>BMI Status: <span class="stat-output">${json.data.health}</span></h3>
+        <h3>Healthy BMI Range: <span class="stat-output">${json.data.healthy_bmi_range}</span></h3>
+        <h3>Basal Metabolic Rate: <span class="stat-output">${json2.data.BMR}</span></h3>
+        <h3>Daily Calories to Maintain Weight: <span class="stat-output">${json2.data.goals["maintain weight"]}</span></h3>
+        </div>
         </div>`
 
         console.log(json2)
