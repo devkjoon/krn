@@ -1,3 +1,5 @@
+// const { STRING } = require("sequelize");
+
 const options = {
   method: 'GET',
   headers: {
@@ -7,10 +9,8 @@ const options = {
 };
 
 
-
 // const weight = (req.params.weight / 2.205)
 // const height = (req.params.height * 2.54)
-
 
 async function oneRepMax(e) {
   e.preventDefault();
@@ -33,52 +33,56 @@ function bmiInput(event) {
   fetch(url, options)
   .then(res => res.json())
   .then(json => {
-    
     console.log(json)
 
-    // $("#bmiCont").empty()
-    $("#bmiCont").append(bmiDiv)
+
+    const gender = document.querySelector('#gender').value;
+    const activitylevel = document.querySelector('#activitylevel').value;
+    const calorieUrl = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${activitylevel}`;
+
+  //  // $("#bmiCont").empty()
+ //   $("#bmiCont").append(bmiDiv)
     
     
-    const bmiContent = 
-    `<div class="bmiCard">
-    <p class="ageValue">${json.data.bmi}</p>
-    <p class="heightValue">${json.data.health}</p>
-    <p class="weightValue">${json.data.healthy_bmi_range}</p>
-    </div>`
+   // const bmiContent = 
+   // `<div class="bmiCard">
+   // <p class="ageValue">${json.data.bmi}</p>
+   // <p class="heightValue">${json.data.health}</p>
+   // <p class="weightValue">${json.data.healthy_bmi_range}</p>
+   // </div>`
 
-    console.log(bmiContent)
+   // console.log(bmiContent)
 
-    $("#bmiWrap").append(bmiContent)
-})}
+  //  $("#bmiWrap").append(bmiContent)
+//})}
 
-function calIntakeInput(event) {
-  event.preventDefault();
-  const age = parseInt(document.querySelector('#age').value);
-  const gender = document.querySelector('#gender').value;
-  const height = parseInt(document.querySelector('#height').value) * 2.54;
-  const weight = parseInt(document.querySelector('#weight').value) / 2.205;
-  const activitylevel = document.querySelector('#activitylevel').value;
-  let calorieintakeurl = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${activitylevel}`
+//function calIntakeInput(event) {
+ // event.preventDefault();
+ // const age = parseInt(document.querySelector('#age').value);
+ // const gender = document.querySelector('#gender').value;
+//  const height = parseInt(document.querySelector('#height').value) * 2.54;
+ // const weight = parseInt(document.querySelector('#weight').value) / 2.205;
+ // const activitylevel = document.querySelector('#activitylevel').value;
+//  let calorieintakeurl = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${activitylevel}`
 
-  fetch(calorieintakeurl, options)
-  .then(res => res.json())
-  .then(json => {
+//  fetch(calorieintakeurl, options)
+ // .then(res => res.json())
+ // .then(json => {
     
-    console.log(json)
-    $("#bmiCont").append(bmiDiv)
+ //   console.log(json)
+ //   $("#bmiCont").append(bmiDiv)
     
     //bmi content is getting wiped out. Need to change the div. Project for Thursday :) 
-    const bmiContent = 
-    `<div class="bmiCard">
-    <p class="bmrValue">${json.data.BMR}</p>
-    <p class="goalsValue">${json.data.goals[0]}</p>
-    </div>`
+ //   const bmiContent = 
+ //   `<div class="bmiCard">
+ //   <p class="bmrValue">${json.data.BMR}</p>
+  //  <p class="goalsValue">${json.data.goals[0]}</p>
+ //   </div>`
 
-    console.log(bmiContent)
+//    console.log(bmiContent)
 
-    $("#bmiWrap").append(bmiContent)
-})}
+ //   $("#bmiWrap").append(bmiContent)
+//})}
 // async function basalMetabolicRate(e) {
 //   e.preventDefault();
 
@@ -86,45 +90,42 @@ function calIntakeInput(event) {
 //   const weight = document.querySelector('#weight3').value;
 //   const age = document.querySelector('#age2').value;
 
-//   const bmr = BMR_men(weight, height, age)
-//   return bmr
-// }
-
-// async function idealBodyWeight(e) {
-//   e.preventDefault();
-
-//   const height = document.querySelector('#height3').value;
-//   const age = document.querySelector('#age3').value;
-
-//   const ibw =  IBW_men(height, age);
-//   return ibw
-// }
 
 
 
+    fetch(calorieUrl, options)
+      .then(res => res.json())
+      .then(json2 => {
 
-// const healthDiv = `<div id="bmiInput"></div>`
+        $("#bmiCont").empty()
+        $("#bmiCont").append(bmiDiv)
+        
+        const bmiContent = 
+        `<div class="bmiCard">
+        <p class="ageValue">${json.data.bmi}</p>
+        <p class="heightValue">${json.data.health}</p>
+        <p class="weightValue">${json.data.healthy_bmi_range}</p>
+        <p class="bmrValue">${json2.data.BMR}</p>
+        <p class="maintainValue">${json2.data.goals["maintain weight"]}</p>
+        </div>`
 
-// async function newFormHandler(event) {
-//   event.preventDefault();
-//   const age = parseInt(document.querySelector('#age').value);
-//   const height = parseInt(document.querySelector('#height').value);
-//   const weight = parseInt(document.querySelector('#weight').value);
-//   const gender = document.querySelector('#gender').value;
-//   const neck = parseInt(document.querySelector('#neck').value);
-//   const waist = parseInt(document.querySelector('#waist').value);
-//   const hips = parseInt(document.querySelector('#hips').value);
-//   const activitylevel = document.querySelector('#activitylevel').value;
-//   window.location = `/bmi/${age}/${weight}/${height}`;
-
-// }
-
-
-
-
+        console.log(json2)
+    
+        console.log(bmiContent)
+    
+        $("#bmiWrap").append(bmiContent)
 
 
-$(".bmiInputs").on("submit", bmiInput, calIntakeInput);
+  })
+  .catch(err => console.error('error:' + err));
+})}
+
+
+
+$(".bmiInputs").on("submit", bmiInput);
+
+//$(".bmiInputs").on("submit", bmiInput, calIntakeInput);
 // document.querySelector(".ormInput").addEventListener("submit", newFormHandler);
 // document.querySelector(".bmrInput").addEventListener("submit", newFormHandler);
 // document.querySelector(".ibwInput").addEventListener("submit", newFormHandler);
+
