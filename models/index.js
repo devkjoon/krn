@@ -1,5 +1,5 @@
 const User = require('./User');
-const Bmi = require('./Bmi');
+const Bmi = require('./bmi');
 const { userInfo } = require('os');
 
 User.hasMany(Bmi, {
