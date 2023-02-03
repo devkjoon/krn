@@ -2,6 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { Workout, Exercises, Bmi } = require('../models');
 const Mealplan = require('../models/meal');
+const nodemailer = require("nodemailer")
+
 
 const logRequest = (req, res, next) => {
   console.log(`Received ${req.method} request at ${req.url}`);
@@ -151,6 +153,16 @@ router.get("/homepage", (req, res) => {
 })
 
 
+
+router.get("/water", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+  } else {
+    res.render("water");
+    return;
+  }
+})
+
 //Temporary route for exercises
 router.get("/exercisemain", (req, res) => {
   if (!req.session.loggedIn) {
@@ -262,18 +274,6 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-      
-
-
-
-
-
-
-
-
-
-
-
 
       // let idealWeight = `https://fitness-calculator.p.rapidapi.com/idealweight?gender=${gender}&height=${height}`
 
@@ -337,6 +337,33 @@ router.post('/', async (req, res) => {
         }
       });
 
+      router.get("/mail/:username/:message/:email/:phone", (req, res) => {
+
+        async function main() {
+        
+          // create reusable transporter object using the default SMTP transport
+          let transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+              user: "liamallen343@gmail.com", 
+              pass: "cxxxfwhljhtvqquo", 
+            },
+          });
+        
+          let info = await transporter.sendMail({
+            from: `"${req.params.username}" <krnhealthwellness@gmail.com>`, 
+            to: "krnhealthwellness@gmail.com", 
+            subject: `Customer Message | ${req.params.email} | ${req.params.phone}`, 
+            text: `${req.params.message}`, 
+          });
+        
+          console.log("Message sent: %s", info.messageId);
+        }
+        
+        main().catch(console.error);
+
+      })
+  
 
 
       module.exports = router;
