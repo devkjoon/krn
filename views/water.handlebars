@@ -1,15 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/water.css">
-        <title>Water Tracker</title>
-    </head>
-
-    <body>
+<link rel="stylesheet" href="/css/water.css"/>
+<nav id="sidebar">
+         <div class="menu_section">
+            <ul>
+               <li><a href="/homepage">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="services.html">Services</a></li>
+               <li><a href="contact">Contact us</a></li>
+               <li><a href="/mealplan">Meal Plan</a></li>
+               <li><a href="/exercisemain">Exercise</a></li>
+               <li><a href="/bmiinput">Health Stats</a></li>
+               <li><a id="logout" href="">Logout</a></li>
+               {{!-- <button id="logout">Logout</button> --}}
+            </ul>
+         </div>
+      </nav>
+      <div id="water-wrap">
+         <!-- Start header -->
+         <header class="top-header">
+               <div class="row">
+                  <div class="col-sm-6">
+                     <div class="logo_main">
+                        <a href="/homepage"><img src="/images/Color logo - no background.png" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img
+                           src="/images/menu_icon.png"></button>
+                  </div>
+               </div>
+            </div>
+         </header>
+    <div id="water-cont">
+        <div class="container"></div>
         <h1>Water Tracker</h1>
         <div class="container">
             <div class="side-info">
@@ -55,7 +77,6 @@
                 <button class="add">+</button>
             </div>
         </div>
-        <script src="/js/water.js"></script>
-    </body>
+    </div>
 
-</html>
+        <script src="/js/water.js"></script>
