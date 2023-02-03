@@ -108,13 +108,13 @@ function bmiInput(event) {
         <h3>Healthy BMI Range: <span class="stat-output">${json.data.healthy_bmi_range}</span></h3>
         <h3>Basal Metabolic Rate: <span class="stat-output">${json2.data.BMR}</span></h3>
         <h3>Daily calories to maintain weight: <span class="stat-output">${json2.data.goals["maintain weight"]}</span></h3>
-        <h3>Daily calories for mild weight loss: <span class="stat-output">${json2.data.goals["Mild weight loss"]}</span></h3>
+        <h3>Daily calories for mild weight loss: <span class="stat-output">${json2.data.goals["Mild weight loss"]["loss weight"]}</span></h3>
         <h3>Daily calories for weight loss: <span class="stat-output">${json2.data.goals["Weight loss"]}</span></h3>
-        <h3>Daily calories for extreme weight loss: <span class="stat-output">${json2.data.goals["Extreme weight loss"]}</span></h3>
-        <h3>Daily calories for mild weight gain: <span class="stat-output">${json2.data.goals["Mild weight gain"]}</span></h3>
-        <h3>Daily calories for weight gain: <span class="stat-output">${json2.data.goals["Weight gain"]}</span></h3>
-        <h3>Daily calories for extreme weight gain: <span class="stat-output">${json2.data.goals["Extreme weight gain"]}</span></h3>
-        </div>
+        <h3>Daily calories for extreme weight loss: <span class="stat-output">${json2.data.goals.["Extreme weight loss"]}</span></h3>
+        <h3>Daily calories for mild weight gain: <span class="stat-output">${json2.data.goals.["Mild weight gain"]}</span></h3>
+        <h3>Daily calories for weight gain: <span class="stat-output">${json2.data.goals.["Weight gain"]}</span></h3>
+        <h3>Daily calories for extreme weight gain: <span class="stat-output">${json2.data.goals.["Extreme weight gain"]}</span></h3>
+          </div>
         </div>`
 
         console.log(json2)
