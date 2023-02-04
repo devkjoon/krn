@@ -40,15 +40,24 @@ function bmiInput(event) {
           const goals = document.querySelector('#goals').value;
           const activitylevelSlice = document.querySelector('#activitylevel').value.slice(-1);
           const macroUrl = `https://fitness-calculator.p.rapidapi.com/macrocalculator?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${activitylevelSlice}&goal=${goals}`;
-console.log(activitylevelSlice);
           fetch(macroUrl, options)
             .then(res => res.json())
             .then(json3 => {
-              $("#bmiCont").empty()
-              $("#bmiCont").append(bmiDiv)
+              const neck = document.querySelector('#neck').value * 2.54;
+              const waist = document.querySelector('#waist').value * 2.54;
+              const hip = document.querySelector('#hip').value * 2.54;
+              const bodyfat = `https://fitness-calculator.p.rapidapi.com/bodyfat?age=${age}&gender=${gender}&weight=${weight}&height=${height}&neck=${neck}&waist=${waist}&hip=${hip}`
+              console.log(neck);
+              console.log(waist);
+              console.log(hip);
+              fetch(bodyfat, options)
+                .then(res => res.json())
+                .then(json4 => {
+                  $("#bmiCont").empty()
+                  $("#bmiCont").append(bmiDiv)
 
-              const bmiContent =
-                `<div class="stat-details">
+                  const bmiContent =
+                    `<div class="stat-details">
         <div class="stat-box">
         <h3>Your Current BMI: <span class="stat-output">${json.data.bmi}</span></h3>
         <h3>BMI Status: <span class="stat-output">${json.data.health}</span></h3>
@@ -78,15 +87,22 @@ console.log(activitylevelSlice);
         <h3>Protein: <span class="stat-output">${Math.round(json3.data.highprotein.protein)}</span></h3>
         <h3>Fat: <span class="stat-output">${Math.round(json3.data.highprotein.fat)}</span></h3>
         <h3>Carbs: <span class="stat-output">${Math.round(json3.data.highprotein.carbs)}</span></h3>
+        <h2>Body Fat</h2>
+        <h3>Body Fat (U.S. Navy Method): <span class="stat-output">${json4.data['Body Fat (U.S. Navy Method)']}</span></h3>
+        <h3>Body Fat Category: <span class="stat-output">${json4.data['Body Fat Category']}</span></h3>
+        <h3>Body Fat Mass: <span class="stat-output">${json4.data['Body Fat Mass']}</span></h3>
+        <h3>Lean Body Mass: <span class="stat-output">${json4.data['Lean Body Mass']}</span></h3>
+        <h3>Body Fat (BMI method): <span class="stat-output">${json4.data['Body Fat (BMI method)']}</span></h3>
         </div>
         </div>`
 
-              console.log(json2)
-              console.log(json3)
-              console.log(bmiContent)
+                  console.log(json2)
+                  console.log(json3)
+                  console.log(bmiContent)
 
-              $("#bmiWrap").append(bmiContent)
+                  $("#bmiWrap").append(bmiContent)
 
+                })
             })
         })
         .catch(err => console.error('error:' + err));
