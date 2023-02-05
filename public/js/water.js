@@ -1,5 +1,5 @@
 const addButton = document.querySelector(".add"),
-    removeButton = document.querySelector('.remove');
+    removeButton = document.querySelector(".remove");
 const MAX_CUPS = 10;
 const MIN_CUPS = 0;
 
@@ -15,7 +15,11 @@ const currentCupsEl = document.querySelector('.current-cups'),
 addButton.addEventListener("click", addCup);
 removeButton.addEventListener('click', removeCup);
 
+
 function addCup() {
+    if (cups >= MAX_CUPS) {
+        return;
+    }
     cups++;
     liters += 250;
     percentage = (cups / MAX_CUPS) * 100;
@@ -27,21 +31,26 @@ function addCup() {
     }
 }
 
+
 function removeCup() {
+    if (cups <= MIN_CUPS) {
+        return;
+    }
     cups--;
     liters -= 250;
     percentage = (cups / MAX_CUPS) * 100;
     updateLayout();
-    if (cups === MIN_CUPS) {
+    if (cups <= MIN_CUPS) {
         removeButton.disabled = true;
     } else {
         addButton.disabled = false;
     }
 }
 
+
 function updateLayout() {
     currentCupsEl.textContent = `${cups}/10`;
     currentLitersEl.textContent = `${liters / 1000}L/2.5L`;
     currentPercentageEl.textContent = `${percentage}%`;
-    progressArea.getElementsByClassName.height = `${percentage}%`;
+    progressArea.style.height = `${percentage}%`;
 }
