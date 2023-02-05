@@ -3,9 +3,7 @@ const addButton = document.querySelector(".add"),
 const MAX_CUPS = 10;
 const MIN_CUPS = 0;
 
-let cups = 0,
-    liters = 0,
-    percentage = 0;
+let cups, liters, percentage;
 
 const currentCupsEl = document.querySelector('.current-cups'),
     currentLitersEl = document.querySelector('.current-liters'),
@@ -23,6 +21,9 @@ function addCup() {
     cups++;
     liters += 250;
     percentage = (cups / MAX_CUPS) * 100;
+    localStorage.setItem('cups', cups);
+    localStorage.setItem('liters', liters);
+    localStorage.setItem('percentage', percentage);
     updateLayout();
     if (cups === MAX_CUPS) {
         addButton.disabled = true;
@@ -39,6 +40,9 @@ function removeCup() {
     cups--;
     liters -= 250;
     percentage = (cups / MAX_CUPS) * 100;
+    localStorage.setItem('cups', cups);
+    localStorage.setItem('liters', liters);
+    localStorage.setItem('percentage', percentage);
     updateLayout();
     if (cups <= MIN_CUPS) {
         removeButton.disabled = true;
@@ -49,8 +53,31 @@ function removeCup() {
 
 
 function updateLayout() {
+    const today = new Date().toDateString();
+    const lastUpdate = localStorage.getItem('lastUpdate');
+    if (today !== lastUpdate) {
+        // reset the local storage values
+        localStorage.setItem('cups', 0);
+        localStorage.setItem('liters', 0);
+        localStorage.setItem('percentage', 0);
+        // store the current date as the last update date
+        localStorage.setItem('lastUpdate', today);
+    }
+
+    cups = localStorage.getItem('cups') || 0;
+    liters = localStorage.getItem('liters') || 0;
+    percentage = localStorage.getItem('percentage') || 0;
+
+    cups = parseInt(cups);
+    liters = parseInt(liters);
+    percentage = parseInt(percentage);
+
     currentCupsEl.textContent = `${cups}/10`;
     currentLitersEl.textContent = `${liters / 1000}L/2.5L`;
     currentPercentageEl.textContent = `${percentage}%`;
     progressArea.style.height = `${percentage}%`;
 }
+
+
+// call the updateLayout function when the page loads
+updateLayout();
