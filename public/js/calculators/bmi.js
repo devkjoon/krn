@@ -65,6 +65,7 @@ function bmiInput(event) {
         <h3>BMI Status: <span class="stat-output">${json.data.health}</span></h3>
         <h3>Healthy BMI Range: <span class="stat-output">${json.data.healthy_bmi_range}</span></h3>
         <h3>Basal Metabolic Rate: <span class="stat-output">${Math.round(json2.data.BMR)}</span></h3>
+        <br/>
         <h3>Daily calories to maintain weight: <span class="stat-output">${Math.round(json2.data.goals["maintain weight"])}</span></h3>
         <h3>Daily calories for mild weight loss: <span class="stat-output">${Math.round(json2.data.goals["Mild weight loss"]["calory"])} (.5lbs)</span></h3>
         <h3>Daily calories for weight loss: <span class="stat-output">${Math.round(json2.data.goals["Weight loss"]["calory"])} (1.1lbs)</span></h3>
