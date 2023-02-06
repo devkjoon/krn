@@ -69,7 +69,7 @@ function mealPlanGen(event) {
             <img src='https://spoonacular.com/recipeImages/${foodId}-312x231.${imagetype}'>
             <p>${parsedtitle.title}</p>
             <h3>Recipe:</h3>
-            <p><a href="${recipeUrl} target="_blank"">${recipeUrl}</a></p>
+            <p><a href="${recipeUrl}" target="_blank">${recipeUrl}</a></p>
             </div>`
       
             console.log(mealContent)
