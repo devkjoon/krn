@@ -33,7 +33,7 @@ To run this project locally, follow these steps:
 4. Run the project locally using `npm start`
 
 ## Usage
-To use this project, go to the deployed site on Heroku and launch the application.
+To use this project, go to the deployed site on Heroku at https://pacific-sierra-02565.herokuapp.com/ and launch the application.
 
 ## Contribution Guidelines
 This is a closed project and contributions are not currently being accepted.
