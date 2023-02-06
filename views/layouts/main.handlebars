@@ -53,6 +53,15 @@
            });
          });
       </script>
+      <script>
+         $(document).ready(function() {
+           $('.menu_section').on('click', "a", function() {
+             $('#sidebar, #content').toggleClass('active');
+             $('.collapse.in').toggleClass('in');
+             $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+           });
+         });
+      </script>
    </head>
    <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
