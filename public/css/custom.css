@@ -280,11 +280,26 @@
 }
 
 .stat-box {
-    width: 25%;
+    position: absolute;
+    top: -30%;
+    max-height: 80vh;
+    width: 40%;
     margin: 10px 20px;
     background-color: rgba(36, 35, 35, 0.759);
-    padding: 10px;
+    padding: 20px;
     border-radius: 18px;
+    overflow: auto;
+}
+
+.stat-box h2{
+   text-decoration: underline;
+   text-underline-offset: 10px ; 
+   font-size: 40px;
+   color: white
+}
+
+.stat-box::-webkit-scrollbar {
+    display: none;
 }
 
 .stat-box h3 {
@@ -360,6 +375,14 @@
         width: 100%;
         margin: 0;
     }
+
+    .stat-box h2{
+        font-size: 20px;
+    }
+
+    .stat-box h3{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 900px){
@@ -369,6 +392,10 @@
     .health-card input,
     .health-card select{
         width: 90%
+    }
+
+    .stat-box{
+        width: 70%
     }
 }
 
