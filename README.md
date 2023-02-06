@@ -48,11 +48,13 @@ This project uses the following technologies:
 - Inquirer
 
 ## Contributions
+**This is a closed project and contributions are not currently being accepted**
+
+## Contributors
 - Liam Allen
 - Joon Kim
 - Trenton Kirchner
 - Alexandria White
-**This is a closed project and contributions are not currently being accepted**
 
 ## Preview
 ![image](https://user-images.githubusercontent.com/114960634/217046657-263557b3-7e27-40b0-ba32-6c0c22a5c625.png)
