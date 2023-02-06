@@ -102,7 +102,7 @@
 }
 
 .exCard p {
-    color: rgb(0, 255, 200);
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     text-transform: capitalize;
@@ -119,6 +119,10 @@
 
 .exCard .bt {
     margin-top: 15px;
+}
+
+#top-bar-nav button#sidebarCollapse{
+    margin-top: 0
 }
 
 #bmi-wrap {
@@ -382,6 +386,12 @@
 
     .stat-box h3{
         font-size: 15px;
+    }
+    #target-spot{
+        display: none
+    }
+    #quotes{
+        font-size: 20px;
     }
 }
 
