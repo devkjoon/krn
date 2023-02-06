@@ -75,6 +75,7 @@ router.get("/water", (req, res) => {
   }
 })
 
+
 //Temporary route for exercises
 router.get("/exercisemain", (req, res) => {
   if (!req.session.loggedIn) {
