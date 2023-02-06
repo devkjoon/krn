@@ -1,36 +1,51 @@
-# KRN
+# Workout Tool
+A comprehensive workout tool that helps users plan and track their fitness journeys.
 
-## Heroku
+## Features
+- A variety of workouts to choose from
+- Meal planning and tracking
+- Water intake tracking
+- Body Mass Index (BMI) estimation
+- Calorie information to reach fitness goals
 
-https://pacific-sierra-02565.herokuapp.com/
+## Technology Stack
+This project uses the following technologies:
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express
+- Express-Handlebars
+- MySQL
+- Sequelize
+- Bcrypt
+- Dotenv
+- Fitness-Calc
+- Console.table
+- Express-Session
+- Inquirer
 
-## Project Requirements
+## Installation
+To run this project locally, follow these steps:
+1. Clone the repository to your local machine using `git clone <repository-url>`
+2. Install the required dependencies by running `npm install` in the project directory
+3. Create a `.env` file in the root of the project with the necessary environment variables
+4. Run the project locally using `npm start`
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+## Usage
+To use this project, go to the deployed site on Heroku and launch the application.
 
-* Use Node.js and Express.js to create a RESTful API.
+## Contribution Guidelines
+This is a closed project and contributions are not currently being accepted.
 
-* Use Handlebars.js as the template engine.
+## License
+This project is released under the MIT License.
 
-* Use MySQL and the Sequelize ORM for the database.
+## Contact
+For support or to report bugs, please reach out to us via the contact page on the deployed application.
 
-* Have both GET and POST routes for retrieving and adding new data.
-
-* Use at least one new library, package, or technology that we haven’t discussed.
-
-* Have a folder structure that meets the MVC paradigm.
-
-* Include authentication (express-session and cookies).
-
-* Protect API keys and sensitive information with environment variables.
-
-* Be deployed using Heroku (with data).
-
-* Have a polished UI.
-
-* Be responsive.
-
-* Be interactive (i.e., accept and respond to user input).
+## Examples and Documentation
+Documentation and examples will be added soon.
 
 * Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 
