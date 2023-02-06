@@ -55,6 +55,12 @@ This project uses the following technologies:
 **This is a closed project and contributions are not currently being accepted**
 
 ## Preview
+![image](https://user-images.githubusercontent.com/114960634/217046657-263557b3-7e27-40b0-ba32-6c0c22a5c625.png)
+![image](https://user-images.githubusercontent.com/114960634/217046814-ff8b11ac-03c4-446b-96f3-9413f6d8d0a3.png)
+![image](https://user-images.githubusercontent.com/114960634/217047049-eb5ac2c1-2772-4cb8-b7f8-831bbc58f544.png)
+![image](https://user-images.githubusercontent.com/114960634/217047210-72eb442d-a27e-4da8-99b6-8fa21653c3db.png)
+![image](https://user-images.githubusercontent.com/114960634/217047450-c10e4522-fca9-4caa-9eb2-4c5c5c02a464.png)
+![image](https://user-images.githubusercontent.com/114960634/217047605-8803e204-669e-4bd6-b2b7-981ff859fd3b.png)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
